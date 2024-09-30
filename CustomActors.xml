@@ -19,4 +19,7 @@ Edit of vanilla dungeon switch:
 - No cutscenes when activating switches
 - Toggleable crystal switches can toggle other crystal switches that share the same flag
   </Actor>
+  <Actor Key="5" Version="1" Name="Pols Voice" FolderName="PolsVoice" Author="CDi-Fails, LuigiXHero, hiisuya" Category="Enemy">
+Custom enemy that is weak to arrows and Ocarina songs
+  </Actor>
 </Table>
