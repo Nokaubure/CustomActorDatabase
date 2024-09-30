@@ -4,14 +4,13 @@
  * Description: Pols Voice enemy (weak to only arrows) from the Hylian Modding actor pack.
  */
 
-
+#include "pols_voice.h" 
 
 #define FLAGS (ACTOR_FLAG_0 | ACTOR_FLAG_2 | ACTOR_FLAG_4 | ACTOR_FLAG_5)
 
 #define ACT_ID 0x0233
 #define OBJ_ID 0x020A
-#define OBJ_H "object/0x020A-PolsVoice.h"
-#include OBJ_H
+
 
 #define COLORFILTER_COLORFLAG_GRAY 0x8000
 #define COLORFILTER_COLORFLAG_RED  0x4000
