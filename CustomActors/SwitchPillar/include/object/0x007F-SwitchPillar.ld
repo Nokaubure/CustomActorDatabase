@@ -1,0 +1,11 @@
+gRedblueblock_TexNormalpillar = 0x06000000;
+gRedblueblock_TexToppillar = 0x06000800;
+gRedblueblock_TexTriforcepillar = 0x06000C00;
+gRedblueblock_MtlNormalpillar = 0x06001480;
+gRedblueblock_MtlToppillar = 0x06001538;
+gRedblueblock_MtlTriforcepillar = 0x060015C0;
+gRedblueblock_CollSinglepillar = 0x06001750;
+gRedblueblock_CollTriplepillar = 0x06001854;
+gRedblueblock_DlSinglepillar = 0x060019C0;
+gRedblueblock_DlTriplepillar = 0x06001B50;
+gRedblueblock_DlDummytriforce = 0x06001BD0;

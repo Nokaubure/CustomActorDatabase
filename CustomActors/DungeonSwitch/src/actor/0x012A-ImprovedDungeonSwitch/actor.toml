@@ -1,0 +1,80 @@
+Name = "Dungeon Switch"
+Category = "Prop"
+Version = 1
+Notes = "Edit of vanilla dungeon switch:\n- Adds a new green/yellow crystal switch variant (use main var 0005-0006)\n- No cutscenes when activating switches\n- Toggleable crystal switches can toggle other crystal switches that share the same flag"
+
+[[Render]]
+    Regex = "..20"
+    Segment = 5
+    Scale = 0.1
+    DisplayList = "0x00005D50"
+[[Render]]
+    Regex = "..10"
+    Segment = 5
+    Scale = 0.1
+    DisplayList = "0x00006170"
+[[Render]]
+    Regex = "...0"
+    Segment = 5
+    Scale = 0.1
+    DisplayList = "0x00005800"
+[[Render]]
+    Regex = "...1"
+    Segment = 5
+    Scale = 0.1
+    DisplayList = "0x00005AD0"
+[[Render]]
+    Regex = "..12"
+    Segment = 5
+    Scale = 0.1
+    DisplayList = "0x00006810"
+    TextureOffsets = [ "0x0000B0A0" ]
+[[Render]]
+    Regex = "...2"
+    Segment = 5
+    Scale = 0.1
+    DisplayList = "0x00006610"
+    TextureOffsets = [ "0x0000A8A0" ]
+[[Render]]
+    Regex = "..1[3-4]"
+    Segment = 5
+    Scale = 0.1
+    EnvColor = [255,0,0,125]
+    DisplayList = "0x00006D10,0x00007488"
+[[Render]]
+    Regex = "..1[5-6]"
+    Segment = 5
+    Scale = 0.1
+    EnvColor = [0,255,0,125]
+    DisplayList = "0x00006D10,0x00007488"
+[[Render]]
+    Regex = "...[3-4]"
+    Segment = 5
+    Scale = 0.1
+    EnvColor = [255,255,255,125]
+    DisplayList = "0x00006D10,0x00007488"
+[[Property]]
+	Mask          = 0x000F
+	Name          = "Switch Type"
+	Target        = "Var"
+	Dropdown = [ [ 0, "Floor"],[ 1, "Rusted Floor"],[ 2, "Yellow Eye"],[ 3, "Crystal"],[ 4, "Targetable Crystal"],[ 5, "Crystal B (use with Toggle)"],[ 6, "Targetable Crystal B (use with Toggle)"]]
+[[Property]]
+    Mask          = 0x3F00
+    Name          = "Switch Flag"
+    Target        = "Var"
+[[Property]]
+	Mask          = 0x0010
+	Name          = "Toggle"
+	Target        = "Var"
+[[Property]]
+	Mask          = 0x0020
+	Name          = "Reset"
+	Target        = "Var"
+[[Property]]
+    Mask          = 0x0040
+    Name          = "Trigger All"
+    Target        = "Var"
+[[Property]]
+    Mask          = 0x0080
+    Name          = "Frozen"
+    Target        = "Var"
