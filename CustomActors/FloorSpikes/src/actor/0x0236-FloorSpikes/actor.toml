@@ -1,7 +1,7 @@
 Name = "Floor Spikes"
 Category = "BG"
 Version = 1
-Notes = "Retractable floor spikes by hiisuya, from the Hylian Modding actor pack.\n\nThe types "Switch Start On/Off" will ALWAYS react to switch flags. They will override if you say not to.\nThere is an ON and OFF state which is controlled by Switch Flags for every type. If you don't allow Switch Flag reaction, then the state is always ON.\nAll types will maintain their ON/OFF position based on their parameters (and switch status) on room reload.\nAka: If a Cyclic Spike that reacts to Switch Flag has that flag set, it will retract and be turned OFF. It will then remain OFF unti\nthat flag is unset.\nIf you need to change timings, use the defines labeled below, though the results may not be perfect."
+Notes = "Retractable floor spikes by hiisuya, from the Hylian Modding actor pack.\n\nThe types 'Switch Start On/Off' will ALWAYS react to switch flags. They will override if you say not to.\nThere is an ON and OFF state which is controlled by Switch Flags for every type. If you don't allow Switch Flag reaction, then the state is always ON.\nAll types will maintain their ON/OFF position based on their parameters (and switch status) on room reload.\nAka: If a Cyclic Spike that reacts to Switch Flag has that flag set, it will retract and be turned OFF. It will then remain OFF unti\nthat flag is unset.\nIf you need to change timings, use the defines labeled below, though the results may not be perfect."
 
 [[Render]]
     Regex = "...."
