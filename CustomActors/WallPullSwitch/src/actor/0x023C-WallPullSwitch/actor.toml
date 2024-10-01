@@ -6,7 +6,7 @@ Notes = "A switch that goes on walls and can be pulled by the player, from the H
 [[Render]]
     Regex = "...."
     Segment = 6
-    Scale = 0.01
+    Scale = 0.1
     DisplayList = "0x00001850,0x000004f8"
 [[Property]]
 	Mask          = 0xFF00
