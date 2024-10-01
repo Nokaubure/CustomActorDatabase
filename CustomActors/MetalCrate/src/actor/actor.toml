@@ -1,0 +1,34 @@
+Name = "Metal Crate"
+Category = "BG"
+Version = 1
+Notes = "Metal crate that can be broken with hammer, from the Hylian Modding actor pack."
+
+[[Render]]
+    Regex = "...."
+    Segment = 6
+    Scale = 0.01
+    DisplayList = "0x00000b18"
+    IgnoreRotation = [1,0,1]
+[[Property]]
+	Mask          = 0xF000
+	Name          = "Type"
+	Target        = "Var"
+	Dropdown = [ [ 0, "Player Triggered"],[ 1, "Cyclic"],[ 2, "Start On"],[ 3, "Start Off"]]
+[[Property]]
+	Mask          = 0x0F00
+	Name          = "Size"
+	Target        = "Var"
+	Dropdown = [ [ 0, "Small"],[ 1, "Medium"],[ 2, "Large"]]
+[[Property]]
+    Mask          = 0x00FF
+    Name          = "Collectible Drop"
+    Target        = "XRot"
+    Dropdown      = [[0x00,"Green Rupee"],[0x01,"Blue Rupee"],[0x02,"Red Rupee"],[0x03,"Recovery Heart"],[0x04,"Bomb"],[0x05,"Arrow (1)"],[0x06,"Heart Piece"],[0x07,"Heart Container (Early)"],[0x08,"Deku Seeds (5) or Arrows (5)"],[0x09,"Deku Seeds (5) or Arrows (10)"],[0x0A,"Deku Seeds (5) or Arrows (30)"],[0x0B,"Bombs (5)"],[0x0C,"Deku Nut"],[0x0D,"Deku Stick"],[0x0E,"Large Magic Jar"],[0x0F,"Small Magic Jar"],[0x10,"Deku Seeds (5) or Arrows (5)"],[0x11,"Small Key"],[0x12,"Flexible Drop"],[0x13,"Giant Orange Rupee"],[0x14,"Large Purple Rupee"],[0x15,"Deku Shield"],[0x16,"Hylian Shield"],[0x17,"Zora Tunic"],[0x18,"Goron Tunic"],[0x19,"Bombs (5)"],[0x1A, "Invisible Item"]]
+[[Property]]
+    Mask          = 0x003F
+    Name          = "Collectible Flag"
+    Target        = "ZRot"
+[[Property]]
+	Mask          = 0xFFFF
+	Name          = "Spawned Skulltula Variable"
+	Target        = "Var"

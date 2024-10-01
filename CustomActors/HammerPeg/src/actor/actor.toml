@@ -1,0 +1,14 @@
+Name = "Hammer Peg"
+Category = "BG"
+Version = 1
+Notes = "Hammer Peg actor from the Hylian Modding actor pack."
+
+[[Render]]
+    Regex = "...."
+    Segment = 6
+    Scale = 0.01
+    DisplayList = "0x000004d0,0x00000db0"
+[[Property]]
+	Mask          = 0x003F
+	Name          = "Switch Flag"
+	Target        = "Var"

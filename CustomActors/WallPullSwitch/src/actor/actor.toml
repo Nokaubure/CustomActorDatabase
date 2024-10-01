@@ -1,0 +1,18 @@
+Name = "Wall Pull Switch"
+Category = "Switch"
+Version = 1
+Notes = "A switch that goes on walls and can be pulled by the player, from the Hylian Modding actor pack."
+
+[[Render]]
+    Regex = "...."
+    Segment = 6
+    Scale = 0.01
+    DisplayList = "0x00001850,0x000004f8"
+[[Property]]
+	Mask          = 0xFF00
+	Name          = "Seconds to retract (0 = never)"
+	Target        = "Var"
+[[Property]]
+	Mask          = 0x003F
+	Name          = "Switch Flag"
+	Target        = "Var"

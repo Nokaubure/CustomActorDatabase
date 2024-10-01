@@ -25,4 +25,20 @@ Custom enemy that is weak to arrows and Ocarina songs
   <Actor Key="6" Version="1" Name="Floor Spikes" FolderName="FloorSpikes" Author="CDi-Fails, hiisuya" HasCustomObject="1" Category="Puzzle">
 Retractable floor spikes by hiisuya, from the Hylian Modding actor pack. Can react to switch flags.
   </Actor>
+  <Actor Key="7" Version="1" Name="Hammer Peg" FolderName="HammerPeg" Author="CDi-Fails" HasCustomObject="1" Category="Puzzle">
+Useful for blocking players before they have the hammer.
+  </Actor>
+  <Actor Key="8" Version="1" Name="Custom Ladder" FolderName="CustomLadder" Author="CDi-Fails" HasCustomObject="1" Category="Puzzle">
+Wooden (hookshotable) or metal (non-hookshotable)
+Can either fade in on switch flag, or drop to the ground when hit with bow/slingshot
+  </Actor>
+  <Actor Key="9" Version="1" Name="Wall Pull Switch" FolderName="WallPullSwitch" Author="kentonm, CDi-Fails" HasCustomObject="1" Category="Puzzle">
+Can retract on a timer and unset switch flag when fully retracted.
+  </Actor>
+  <Actor Key="10" Version="1" Name="Metal Crate" FolderName="MetalCrate" Author="kentonm" HasCustomObject="1" Category="Puzzle">
+Can only be broken with the hammer
+  </Actor>
+  <Actor Key="11" Version="1" Name="Zol" FolderName="Zol" Author="ZeeRoX" HasCustomObject="1" Category="Enemy">
+Slime monster that can split in two
+  </Actor>
 </Table>

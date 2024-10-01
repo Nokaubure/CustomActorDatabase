@@ -1,0 +1,20 @@
+Name = "Zol"
+Category = "Enemy"
+Version = 1
+Notes = "Zol enemy from the Hylian Modding actor pack."
+[[Render]]
+    Regex = "...."
+    Segment = 6
+    Scale = 0.08
+    Animation = 1
+    Hirearchy = 1
+[[Property]]
+    Mask          = 0xFF00
+    Name          = "Spawn Appearance"
+    Target        = "Var"
+    Dropdown = [ [ 0, "None"],[ 1, "Floor"],[ 2, "Ceiling"]]
+[[Property]]
+    Mask          = 0x00FF
+    Name          = "Type"
+    Target        = "Var"
+    Dropdown = [ [ 0, "Green"],[ 1, "Red"],[ 3, "Yellow"],[ 0x0A, "Blue"],[ 0x04, "Fire"],[ 0x06, "Ice"],[ 0x08, "Electric"]]

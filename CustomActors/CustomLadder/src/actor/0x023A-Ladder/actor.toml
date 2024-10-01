@@ -1,0 +1,49 @@
+Name = "Custom Ladder"
+Category = "BG"
+Version = 1
+Notes = "Ladder actor from the Hylian Modding actor pack. Can either fade in on switch flag, or drop to the ground when hit with bow/slingshot."
+
+[[Render]]
+    Regex = "0..."
+    Segment = 6
+    Scale = 0.01
+    DisplayList = "0x00001188"
+[[Render]]
+    Regex = "1..."
+    Segment = 6
+    Scale = 0.01
+    DisplayList = "0x00000808"
+[[Render]]
+    Regex = "2..."
+    Segment = 6
+    Scale = 0.01
+    DisplayList = "0x00001AF8"
+[[Render]]
+    Regex = "3..."
+    Segment = 6
+    Scale = 0.01
+    DisplayList = "0x00002D38"
+[[Render]]
+    Regex = "4..."
+    Segment = 6
+    Scale = 0.01
+    DisplayList = "0x000023F8"
+[[Render]]
+    Regex = "5..."
+    Segment = 6
+    Scale = 0.01
+    DisplayList = "0x00003668"
+[[Property]]
+	Mask          = 0xF000
+	Name          = "Model"
+	Target        = "Var"
+	Dropdown = [ [ 0, "Small wood"],[ 1, "Medium wood"],[ 2, "Large wood"],[ 3, "Small metal"],[ 4, "Medium metal"],[ 5, "Large metal"] ]
+[[Property]]
+	Mask          = 0x0F00
+	Name          = "Type"
+	Target        = "Var"
+	Dropdown = [ [ 0, "Fades on switch flag"],[ 1, "Falls when shot"] ]
+[[Property]]
+	Mask          = 0x003F
+	Name          = "Switch Flag"
+	Target        = "Var"
