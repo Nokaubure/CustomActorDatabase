@@ -41,4 +41,10 @@ Can only be broken with the hammer
   <Actor Key="11" Version="1" Name="Zol" FolderName="Zol" Author="ZeeRoX" HasCustomObject="1" Category="Enemy">
 Slime monster that can split in two
   </Actor>
+  <Actor Key="12" Version="1" Name="Ball of Bones" FolderName="BallOfBones" Author="Jinnosuke" HasCustomObject="1" Category="Boss">
+Custom midboss
+  </Actor>
+  <Actor Key="13" Version="1" Name="Hiploop" FolderName="Hiploop" Author="xdudeawesome" HasCustomObject="1" Category="Enemy">
+Enemy from Majora's Mask
+  </Actor>
 </Table>

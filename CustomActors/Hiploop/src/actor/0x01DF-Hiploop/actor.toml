@@ -1,0 +1,15 @@
+Name = "Hiploop"
+Category = "Enemy"
+Version = 1
+Notes = "Enemy ported from Majora's Mask, large insect that charges at Link"
+[[Render]]
+    Regex = "...."
+    Segment = 6
+    Scale = 0.03
+    Animation = 1
+    Hirearchy = 1
+[[Property]]
+	Mask          = 0x0001
+	Name          = "Charge Type"
+	Target        = "Var"
+	Dropdown = [ [ 0, "Any direction"],[ 1, "Straight Line"]]
