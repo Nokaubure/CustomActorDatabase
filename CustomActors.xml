@@ -42,9 +42,9 @@ Can only be broken with the hammer
 Slime monster that can split in two
   </Actor>
   <Actor Key="12" Version="1" Name="Ball of Bones" FolderName="BallOfBones" Author="Jinnosuke" HasCustomObject="1" Category="Boss">
-Custom midboss
+Custom spooky midboss
   </Actor>
   <Actor Key="13" Version="1" Name="Hiploop" FolderName="Hiploop" Author="xdudeawesome" HasCustomObject="1" Category="Enemy">
-Enemy from Majora's Mask
+Enemy ported from Majora's Mask, large insect that charges at Link
   </Actor>
 </Table>
