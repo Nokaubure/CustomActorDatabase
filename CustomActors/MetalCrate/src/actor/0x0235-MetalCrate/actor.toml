@@ -6,19 +6,9 @@ Notes = "Metal crate that can be broken with hammer, from the Hylian Modding act
 [[Render]]
     Regex = "...."
     Segment = 6
-    Scale = 0.01
+    Scale = 0.1
     DisplayList = "0x00000b18"
     IgnoreRotation = [1,0,1]
-[[Property]]
-	Mask          = 0xF000
-	Name          = "Type"
-	Target        = "Var"
-	Dropdown = [ [ 0, "Player Triggered"],[ 1, "Cyclic"],[ 2, "Start On"],[ 3, "Start Off"]]
-[[Property]]
-	Mask          = 0x0F00
-	Name          = "Size"
-	Target        = "Var"
-	Dropdown = [ [ 0, "Small"],[ 1, "Medium"],[ 2, "Large"]]
 [[Property]]
     Mask          = 0x00FF
     Name          = "Collectible Drop"

@@ -6,8 +6,31 @@ Notes = "Zol enemy from the Hylian Modding actor pack."
     Regex = "...."
     Segment = 6
     Scale = 0.08
-    Animation = 1
-    Hirearchy = 1
+    ColorMask = 0x00FF
+    ColorTarget = "Var"
+    EnvColorArray = [ [0, 70, 0, 255], 
+    [70, 0, 0, 255],
+    [0, 0, 0, 0],
+    [70, 70, 0, 255],
+    [150, 120, 0, 255],
+    [0, 0, 0, 0],
+    [0, 120, 150, 255],
+    [0, 0, 0, 0],
+    [150, 150, 0, 255],
+    [0, 0, 0, 0],
+    [0, 0, 70, 255] ]
+    PrimColorArray = [ [180, 255, 180, 255], 
+    [255, 180, 180, 255],
+    [0, 0, 0, 0],
+    [255, 255, 180, 255],
+    [255, 200, 80, 255],
+    [0, 0, 0, 0],
+    [80, 200, 255, 255],
+    [0, 0, 0, 0],
+    [255, 255, 80, 255],
+    [0, 0, 0, 0],
+    [180, 180, 255, 255] ]
+    DisplayList = "0x000014c0,0x00001890"
 [[Property]]
     Mask          = 0xFF00
     Name          = "Spawn Appearance"
