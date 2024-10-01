@@ -45,6 +45,6 @@ Slime monster that can split in two
 Custom spooky midboss
   </Actor>
   <Actor Key="13" Version="1" Name="Hiploop" FolderName="Hiploop" Author="xdudeawesome" HasCustomObject="1" Category="Enemy">
-Enemy arge insect that charges at Link
+Enemy ported from Majora's Mask, large insect that charges at Link
   </Actor>
 </Table>
