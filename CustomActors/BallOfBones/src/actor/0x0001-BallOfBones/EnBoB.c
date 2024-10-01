@@ -27,7 +27,7 @@ f32 PingPongF(f32 v, f32 min, f32 max);
 
 #define ACT_ID 0x0001
 #define OBJ_ID 0x0004
-#define OBJ_H "object/0x0004-EnBoB.h"
+#define OBJ_H "object/0x0004-BallOfBones.h"
 #include OBJ_H
 
 const ActorInit sEnBoB_InitVars = {

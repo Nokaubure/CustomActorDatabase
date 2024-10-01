@@ -2,7 +2,7 @@
 # Material Count: 5
 exportid 1691872257.481927
 newtex "BoBody1"
-map C:\Users\Adam\Desktop\BoB\BoBody1.png
+map BoBody1.png
 newmtl "Body"
 vertexshading normal
 texel0 "BoBody1"
@@ -19,7 +19,7 @@ gbivar shiftt0 0
 gbi _loadtexels
 gbi gsDPSetTileSize(G_TX_RENDERTILE, 0, 0, qu102(_texel0width-1), qu102(_texel0height-1))
 newtex "BoBFace1"
-map C:\Users\Adam\Desktop\BoB\BoBFace1.png
+map BoBFace1.png
 newmtl "Head"
 vertexshading normal
 texel0 "BoBFace1"
@@ -36,7 +36,7 @@ gbivar shiftt0 0
 gbi _loadtexels
 gbi gsDPSetTileSize(G_TX_RENDERTILE, 0, 0, qu102(_texel0width-1), qu102(_texel0height-1))
 newtex "Bone2.png"
-map C:\Users\Adam\Desktop\BoB\Bone2.png
+map Bone2.png
 newmtl "Bones"
 vertexshading normal
 standalone
@@ -55,7 +55,7 @@ gbivar shiftt0 0
 gbi _loadtexels
 gbi gsDPSetTileSize(G_TX_RENDERTILE, 0, 0, qu102(_texel0width-1), qu102(_texel0height-1))
 newtex "EffectBall.png"
-map C:\Users\Adam\Desktop\BoB\EffectBall.png
+map EffectBall.png
 format i8
 alphamode black
 newmtl "BallEffect"
@@ -74,7 +74,7 @@ gbivar shiftt0 0
 gbi _loadtexels
 gbi gsDPSetTileSize(G_TX_RENDERTILE, 0, 0, qu102(_texel0width-1), qu102(_texel0height-1))
 newtex "BoneSpear.png"
-map C:\Users\Adam\Desktop\BoB\BoneSpear.png
+map BoneSpear.png
 newmtl "Projectile"
 vertexshading normal
 standalone

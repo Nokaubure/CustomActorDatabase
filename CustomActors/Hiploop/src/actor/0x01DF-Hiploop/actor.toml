@@ -7,7 +7,7 @@ Notes = "Enemy ported from Majora's Mask, large insect that charges at Link"
     Segment = 6
     Scale = 0.03
     Animation = 1
-    Hirearchy = 1
+    Hierarchy = 1
 [[Property]]
 	Mask          = 0x0001
 	Name          = "Charge Type"

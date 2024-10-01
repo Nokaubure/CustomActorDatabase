@@ -3,9 +3,11 @@
 
 #include "ultra64/types.h"
 #include <uLib.h>
-#include <object/0x0004-EnBoB.h>
 #include <ulib_math.h>
 #include "uLib_vector.h"
+
+#define OBJ_H "object/0x0084-BallOfBones.h"
+#include OBJ_H
 
 asm("Fog_SetOpa = 0x80026400");
 asm("Fog_SetXlu = 0x80026690");
