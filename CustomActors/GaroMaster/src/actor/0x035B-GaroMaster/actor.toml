@@ -1,0 +1,15 @@
+Name = "Garo Master"
+Category = "Enemy"
+Version = 1
+Notes = "Midboss ported from Majora's Mask, dangerous enemy that wields two flaming sabers"
+[[Render]]
+    Regex = "...."
+    Segment = 6
+    Scale = 0.01
+    Animation = 1
+    Hierarchy = 1
+[[Property]]
+	Mask          = 0x0001
+	Name          = "Type"
+	Target        = "Var"
+	Dropdown = [ [ 0, "Starts invisible?"],[ 1, "Falls from ceiling?"]]

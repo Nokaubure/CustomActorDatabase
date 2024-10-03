@@ -1,0 +1,10 @@
+Name = "Snapper"
+Category = "Enemy"
+Version = 1
+Notes = "Enemy ported from Majora's Mask, turtle-like creature that spins against Link"
+[[Render]]
+    Regex = "...."
+    Segment = 6
+    Scale = 0.01
+    Animation = 1
+    Hierarchy = 1

@@ -44,7 +44,16 @@ Slime monster that can split in two
   <Actor Key="12" Version="1" Name="Ball of Bones" FolderName="BallOfBones" Author="Jinnosuke" HasCustomObject="1" Category="Boss">
 Custom spooky midboss
   </Actor>
-  <Actor Key="13" Version="1" Name="Hiploop" FolderName="Hiploop" Author="xdudeawesome" HasCustomObject="1" Category="Enemy">
-Enemy ported from Majora's Mask, large insect that charges at Link.
+  <Actor Key="13" Version="1" Name="Hiploop" FolderName="Hiploop" Author="X dude Awesome" HasCustomObject="1" Category="Enemy">
+Enemy ported from Majora's Mask, large insect that charges at Link
+  </Actor>
+  <Actor Key="14" Version="1" Name="Snapper" FolderName="Snapper" Author="X Dude Awesome" HasCustomObject="1" Category="Enemy">
+Enemy ported from Majora's Mask, turtle-like creature that spins against Link
+  </Actor>
+  <Actor Key="15" Version="1" Name="Real Bombchu" FolderName="RealBombchu" Author="X Dude Awesome" HasCustomObject="1" Category="Enemy">
+Enemy ported from Majora's Mask, rat-shaped creature that explodes on contact and can climb walls
+  </Actor>
+  <Actor Key="16" Version="1" Name="Garo Master" FolderName="GaroMaster" Author="X Dude Awesome" HasCustomObject="1" Category="Boss">
+Midboss ported from Majora's Mask, dangerous enemy that wields two flaming sabers
   </Actor>
 </Table>

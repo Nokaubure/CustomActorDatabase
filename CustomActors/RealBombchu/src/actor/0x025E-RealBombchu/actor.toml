@@ -1,0 +1,19 @@
+Name = "Real Bombchu"
+Category = "Enemy"
+Version = 1
+Notes = "Enemy ported from Majora's Mask, rat-shaped creature that explodes on contact and can climb walls"
+[[Render]]
+    Regex = "...."
+    Segment = 6
+    Scale = 0.01
+    Animation = 1
+    Hierarchy = 1
+[[Property]]
+	Mask          = 0x8000
+	Name          = "Type"
+	Target        = "Var"
+	Dropdown = [ [ 0, "Dungeon"],[ 1, "Overworld"]]
+[[Property]]
+	Mask          = 0x00FF
+	Name          = "Attack Range"
+	Target        = "Var"
