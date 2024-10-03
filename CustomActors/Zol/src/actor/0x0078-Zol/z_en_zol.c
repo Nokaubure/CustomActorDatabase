@@ -687,7 +687,7 @@ void EnZol_CheckDamage(Actor* thisx, PlayState* play) {
 
                     Audio_PlayActorSfx2(thisx, NA_SE_EN_AWA_BREAK);
 
-                    childZol = Actor_SpawnAsChild(&play->actorCtx, &this->actor, play, 0x0078,
+                    childZol = Actor_SpawnAsChild(&play->actorCtx, &this->actor, play, ACT_ID,
                                                     thisx->world.pos.x, thisx->world.pos.y, thisx->world.pos.z,
                                                     thisx->world.rot.x, this->actor.yawTowardsPlayer - 0x4000, thisx->world.rot.z, ZOL_SPLIT);
 
@@ -707,7 +707,7 @@ void EnZol_CheckDamage(Actor* thisx, PlayState* play) {
 
                     Audio_PlayActorSfx2(thisx, NA_SE_EN_AWA_BREAK);
 
-                    childZol = Actor_SpawnAsChild(&play->actorCtx, &this->actor, play, 0x0078,
+                    childZol = Actor_SpawnAsChild(&play->actorCtx, &this->actor, play, ACT_ID,
                                                     thisx->world.pos.x, thisx->world.pos.y, thisx->world.pos.z,
                                                     thisx->world.rot.x, this->actor.yawTowardsPlayer - 0x4000, thisx->world.rot.z, ZOL_SPLIT_FIRE);
 
@@ -727,7 +727,7 @@ void EnZol_CheckDamage(Actor* thisx, PlayState* play) {
 
                     Audio_PlayActorSfx2(thisx, NA_SE_EN_AWA_BREAK);
 
-                    childZol = Actor_SpawnAsChild(&play->actorCtx, &this->actor, play, 0x0078,
+                    childZol = Actor_SpawnAsChild(&play->actorCtx, &this->actor, play, ACT_ID,
                                                     thisx->world.pos.x, thisx->world.pos.y, thisx->world.pos.z,
                                                     thisx->world.rot.x, this->actor.yawTowardsPlayer - 0x4000, thisx->world.rot.z, ZOL_SPLIT_ICE);
 
@@ -747,7 +747,7 @@ void EnZol_CheckDamage(Actor* thisx, PlayState* play) {
 
                     Audio_PlayActorSfx2(thisx, NA_SE_EN_AWA_BREAK);
 
-                    childZol = Actor_SpawnAsChild(&play->actorCtx, &this->actor, play, 0x0078,
+                    childZol = Actor_SpawnAsChild(&play->actorCtx, &this->actor, play, ACT_ID,
                                                     thisx->world.pos.x, thisx->world.pos.y, thisx->world.pos.z,
                                                     thisx->world.rot.x, this->actor.yawTowardsPlayer - 0x4000, thisx->world.rot.z, ZOL_SPLIT_ELEC);
 
