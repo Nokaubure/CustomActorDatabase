@@ -1,7 +1,7 @@
 Name = "Garo Master"
 Category = "Enemy"
 Version = 1
-Notes = "Midboss ported from Majora's Mask, dangerous enemy that wields two flaming sabers"
+Notes = "Midboss ported from Majora's Mask, dangerous enemy that wields two flaming sabers. Use variable 0001"
 [[Render]]
     Regex = "...."
     Segment = 6
