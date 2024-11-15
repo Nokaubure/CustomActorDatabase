@@ -5,7 +5,7 @@
 #include <ulib_math.h>
 #include "uLib_vector.h"
 
-#define OBJ_H "object/0x0220-EnDummy.h"
+#define OBJ_H "object/0x0220-TrainingDummy.h"
 
 #include OBJ_H
 
