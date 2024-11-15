@@ -2,9 +2,12 @@
 #define __EN_DUMMY_H__
 
 #include <uLib.h>
-#include "object/0x0220-EnDummy.h"
 #include <ulib_math.h>
 #include "uLib_vector.h"
+
+#define OBJ_H "object/0x0220-EnDummy.h"
+
+#include OBJ_H
 
 #define SKELANIME_MEMBER(limb_max) \
     SkelAnime skelAnime; \

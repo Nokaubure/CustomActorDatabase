@@ -11,9 +11,7 @@ void EnDummy_Particle(EnDummy* this, PlayState* play);
 
 #define ACT_ID 0x0220
 #define OBJ_ID 0x0220
-#define OBJ_H "object/0x0220-EnDummy.h"
 
-#include OBJ_H
 
 const ActorInit sEnDummy_InitVars = {
     .id           = ACT_ID,
