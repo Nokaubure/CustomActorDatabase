@@ -45,7 +45,7 @@ Can only be broken with the hammer
   <Actor Key="11" Version="1" Name="Zol" FolderName="Zol" Author="ZeeRoX" HasCustomObject="1" Category="Enemy">
 Slime monster that can split in two
   </Actor>
-  <Actor Key="12" Version="1" Name="Ball of Bones" FolderName="BallOfBones" Author="Jinnosuke" HasCustomObject="1" Category="Boss">
+  <Actor Key="12" Version="1" Name="Ball of Bones" FolderName="BallOfBones" Author="Jinnosuke9" HasCustomObject="1" Category="Boss">
 Custom spooky midboss
   </Actor>
   <Actor Key="13" Version="1" Name="Hiploop" FolderName="Hiploop" Author="X dude Awesome" HasCustomObject="1" Category="Enemy">
@@ -60,4 +60,8 @@ Enemy ported from Majora's Mask, rat-shaped creature that explodes on contact an
   <Actor Key="16" Version="1" Name="Garo Master" FolderName="GaroMaster" Author="X Dude Awesome" HasCustomObject="1" Category="Boss">
 Midboss ported from Majora's Mask, dangerous enemy that wields two flaming sabers
   </Actor>
+  <Debug Key="17" Version="1" Name="Training Dummy" FolderName="TrainingDummy" Author="Jinnosuke9" HasCustomObject="1" Category="Utility">
+Training Dummy Actor made by Jinnosuke9. 
+Has a variety of typical enemy behaviors and some new ones.
+  </Debug>
 </Table>

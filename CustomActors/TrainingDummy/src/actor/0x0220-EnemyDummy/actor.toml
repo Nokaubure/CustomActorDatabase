@@ -1,0 +1,19 @@
+Name = "Training Dummy"
+Category = "BG"
+Notes = "Training Dummy Actor made by Jinnosuke9. \nHas a variety of typical enemy behaviors and some new ones."
+Version = 1
+
+[[Render]]
+    Regex = "...."
+    Scale = 0.004
+    YOffset = 0
+    Animation = 1
+
+[[Property]]
+    Mask      = 0x000F
+    Name      = "Type"
+    Target    = "Var"
+    Dropdown = [
+        [ 0, "Default" ],
+        [ 1, "DebugCone" ],
+    ]
