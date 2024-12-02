@@ -1,0 +1,24 @@
+Name = "Switch Water"
+Category = "BG"
+Version = 1
+Notes = "Water that raises or lowers depending on switch flag. The model will automatically fit the targeted waterbox ingame, so the model is not rendered in the tool. Speed configurable."
+
+[[Property]]
+	Mask          = 0xFF00
+	Name          = "Waterbox ID"
+	Target        = "Var"
+
+[[Property]]
+	Mask          = 0x003F
+	Name          = "Switch Flag"
+	Target        = "Var"
+
+[[Property]]
+	Mask          = 0x00FF
+	Name          = "Raise/Lower speed"
+	Target        = "XRot"
+
+[[Property]]
+	Mask          = 0xFFFF
+	Name          = "Target Y position"
+	Target        = "ZRot"

@@ -1,0 +1,21 @@
+Name = "Switch Timer"
+Category = "BG"
+Version = 1
+Notes = "A timer will start counting down once a switch flag is active, then after certain time the switch will be set to off. The amount of time and the delay to start the timer are configurable."
+
+[[Property]]
+	Mask          = 0x003F
+	Name          = "Switch Flag"
+	Target        = "Var"
+
+[[Property]]
+	Mask          = 0x00FF
+	Name          = "Time in 1/10th seconds"
+	Target        = "XRot"
+	Decimal       = true
+
+[[Property]]
+	Mask          = 0x00FF
+	Name          = "Time before starting timer in 1/10th seconds"
+	Target        = "ZRot"
+	Decimal       = true

@@ -1,11 +1,21 @@
 Name = "Switch Camera"
 Category = "BG"
-Version = 1
-Notes = "The camera will temporarily switch to this actor's position and rotation when Switch Flag is turned on, adjust the time in properties"
+Version = 2
+Notes = "The camera will temporarily switch to this actor's position and rotation (Type 1) or to a scene camera ID (Type 2) when Switch Flag is turned on, adjust the time in properties"
 
 [[Property]]
 	Mask          = 0x003F
 	Name          = "Switch Flag"
+	Target        = "Var"
+
+[[Property]]
+	Mask          = 0x2000
+	Name          = "is Type 2"
+	Target        = "Var"
+
+[[Property]]
+	Mask          = 0x0F00
+	Name          = "Camera ID (Type 2)"
 	Target        = "Var"
 
 [[Property]]
@@ -17,3 +27,4 @@ Notes = "The camera will temporarily switch to this actor's position and rotatio
 	Mask          = 0x00FF
 	Name          = "Time in 1/10th seconds"
 	Target        = "ZRot"
+	Decimal       = true
