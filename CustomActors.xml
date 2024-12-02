@@ -9,9 +9,15 @@ Supports being rotated in all 3 axis.
 Platform that follows a pathway or a position defined by rotation depending on switch flag. 
 You can change its color, speed and initial state with properties.
   </Actor>
-  <Actor Key="3" Version="1" Name="Switch Camera" FolderName="SwitchCamera" Author="Nokaubure" Category="Utility">
+  <Actor Key="3" Version="2" Name="Switch Camera" FolderName="SwitchCamera" Author="Nokaubure" Category="Utility">
 Simple actor that temporarily moves the camera to its position and rotation when switch flag is enabled. 
 Time configurable in properties.
+  </Actor>
+  <Actor Key="18" Version="1" Name="Switch Timer" FolderName="SwitchTimer" Author="Nokaubure" Category="Utility">
+A timer will start counting down once a switch flag is active, then after certain time the switch will be set to off. The amount of time and the delay to start the timer are configurable.
+  </Actor>
+  <Actor Key="19" Version="1" Name="Switch Water" FolderName="SwitchWater" Author="Nokaubure" HasCustomObject="1" Category="Puzzle">
+Water that raises or lowers depending on switch flag. The model will automatically fit the targeted waterbox ingame, so the model is not rendered in the tool. Speed configurable.
   </Actor>
   <Actor Key="4" Version="1" Name="Improved Dungeon Switch" FolderName="DungeonSwitch" Author="Nokaubure" ActorID="012A" Category="Puzzle">
 Edit of vanilla dungeon switch:
