@@ -13,8 +13,8 @@
 
 #define THIS ((EnPp*)thisx)
 
-#define ACT_ID 0x01DF
-#define OBJ_ID 0x0199
+#define ACT_ID 0x0074
+#define OBJ_ID 0x0083
 
 
 void EnPp_Init(Actor* thisx, PlayState* play);
@@ -1093,7 +1093,7 @@ void EnPp_Dead(EnPp* this, PlayState* play) {
  */
 void EnPp_Mask_SetupDetach(EnPp* this, PlayState* play) {
     s32 yawDiff;
-    EnPp* pp = (EnPp*)Actor_Spawn(&play->actorCtx, play, 0x01DF, this->actor.world.pos.x, this->actor.world.pos.y,
+    EnPp* pp = (EnPp*)Actor_Spawn(&play->actorCtx, play, ACT_ID, this->actor.world.pos.x, this->actor.world.pos.y,
                                   this->actor.world.pos.z, this->actor.world.rot.x, this->actor.shape.rot.y,
                                   this->actor.world.rot.z, EN_PP_TYPE_UNMASKED);
 
@@ -1334,9 +1334,9 @@ void EnPp_UpdateDamage(EnPp* this, PlayState* play) {
                                ((((this->drawDmgEffType != ACTOR_DRAW_DMGEFF_FROZEN_SFX)) &&
                                  (this->drawDmgEffType != ACTOR_DRAW_DMGEFF_FROZEN_NO_SFX)) ||
                                 (this->drawDmgEffTimer == 0))) {
-                        Actor_Spawn(&play->actorCtx, play, 0x33B, this->actor.focus.pos.x,
+                        /*Actor_Spawn(&play->actorCtx, play, 0x33B, this->actor.focus.pos.x,
                                     this->actor.focus.pos.y, this->actor.focus.pos.z, 0, 0, 0,
-                                    4);
+                                    4);*/
                         Actor_SetColorFilter(&this->actor, COLORFILTER_COLORFLAG_GRAY, 255, COLORFILTER_BUFFLAG_OPA,
                                              25);
                         this->drawDmgEffTimer = 20;
@@ -1345,9 +1345,9 @@ void EnPp_UpdateDamage(EnPp* this, PlayState* play) {
                                ((((this->drawDmgEffType != ACTOR_DRAW_DMGEFF_FROZEN_SFX)) &&
                                  (this->drawDmgEffType != ACTOR_DRAW_DMGEFF_FROZEN_NO_SFX)) ||
                                 (this->drawDmgEffTimer == 0))) {
-                        Actor_Spawn(&play->actorCtx, play, 0x33B, this->actor.focus.pos.x,
+                        /*Actor_Spawn(&play->actorCtx, play, 0x33B, this->actor.focus.pos.x,
                                     this->actor.focus.pos.y, this->actor.focus.pos.z, 0, 0, 0,
-                                    4);
+                                    4);*/
                         Actor_SetColorFilter(&this->actor, COLORFILTER_COLORFLAG_GRAY, 255, COLORFILTER_BUFFLAG_OPA,
                                              25);
                         this->drawDmgEffTimer = 20;
@@ -1612,7 +1612,7 @@ void EnPp_PostLimbDraw(PlayState* play, s32 limbIndex, Gfx** dList, Vec3s* rot, 
                 ((limbIndex == 1) || (limbIndex == 3) ||
                  (limbIndex == 6) || (limbIndex == 10) ||
                  (limbIndex == 16) || (limbIndex == 19))) {
-                Actor_Spawn(&play->actorCtx, play, 0x01DF, this->actor.world.pos.x, this->actor.world.pos.y,
+                Actor_Spawn(&play->actorCtx, play, ACT_ID, this->actor.world.pos.x, this->actor.world.pos.y,
                             this->actor.world.pos.z, this->actor.world.rot.x, this->actor.world.rot.y,
                             this->actor.world.rot.z, limbIndex + 7);
                 this->deadBodyPartsSpawnedCount++;
