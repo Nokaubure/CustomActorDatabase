@@ -25,7 +25,7 @@ Edit of vanilla dungeon switch:
 - No cutscenes when activating switches
 - Toggleable crystal switches can toggle other crystal switches that share the same flag
   </Actor>
-  <Actor Key="20" Version="1" Name="Play Cutscene" FolderName="EnPlayCutscene" Author="" ActorID="012A" Category="Utility">
+  <Actor Key="20" Version="1" Name="Play Cutscene" FolderName="EnPlayCutscene" Author="" ActorID="012A" ForceUpdate="1" Category="Utility">
 Updated version of the default actor that comes with z64rom, used to play cutscenes.
   </Actor>
   <Actor Key="5" Version="1" Name="Pols Voice" FolderName="PolsVoice" Author="CDi-Fails, LuigiXHero, hiisuya" HasCustomObject="1" Category="Enemy">
