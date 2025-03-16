@@ -175,7 +175,7 @@ void init(SwitchPlatform *en, PlayState *play) {
         en->dyna.actor.world.rot.y = 0;
     }
 
-    if (en->inverted && en->behaviour == BEH_STOP) {en->orientation = -1; en->waypointID = 1;}
+    if (en->inverted && en->behaviour == BEH_STOP) {en->orientation = -1; en->waypointID = en->pathpointer[en->pathwayID].count-1;}
 
 
     if (en->behaviour == BEH_STOP)
@@ -186,7 +186,10 @@ void init(SwitchPlatform *en, PlayState *play) {
 
 
         if (en->type == TYPE_ROT) GetPathpointPos(en->pathpointer, &en->targetpos, en->pathwayID, 1);
-        else GetPathpointPos(en->pathpointer, &en->targetpos, en->pathwayID, en->pathpointer[en->pathwayID].count-1);
+        else 
+        {
+            GetPathpointPos(en->pathpointer, &en->targetpos, en->pathwayID, en->pathpointer[en->pathwayID].count-1);
+        }
 
         en->dyna.actor.world.pos.x = en->targetpos.x;
         en->dyna.actor.world.pos.y = en->targetpos.y;
@@ -194,9 +197,26 @@ void init(SwitchPlatform *en, PlayState *play) {
     
 
         en->state = STATE_ON;
+        if (!en->inverted)
+        {
+        en->waypointID = en->pathpointer[en->pathwayID].count-1;
+        en->orientation = -en->orientation;
+        }
     }
     else
+    {
         en->state = STATE_OFF;
+        GetPathpointPos(en->pathpointer, &en->targetpos, en->pathwayID, 0);
+        en->dyna.actor.world.pos.x = en->targetpos.x;
+        en->dyna.actor.world.pos.y = en->targetpos.y;
+        en->dyna.actor.world.pos.z = en->targetpos.z;
+        if (en->inverted)
+        {
+        en->waypointID = 0;
+        en->orientation = -en->orientation;
+        }
+        
+    }
 
     }
 

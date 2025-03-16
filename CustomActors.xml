@@ -5,7 +5,7 @@ Pillar that expands and contracts depending on switch flag.
 You can change its color, size, texture and initial state with properties. 
 Supports being rotated in all 3 axis.
   </Actor>
-  <Actor Key="2" Version="1" Name="Switch Platform" FolderName="SwitchPlatform" Author="Nokaubure" HasCustomObject="1" Category="Puzzle">
+  <Actor Key="2" Version="2" Name="Switch Platform" FolderName="SwitchPlatform" Author="Nokaubure" HasCustomObject="1" Category="Puzzle">
 Platform that follows a pathway or a position defined by rotation depending on switch flag. 
 You can change its color, speed and initial state with properties.
   </Actor>

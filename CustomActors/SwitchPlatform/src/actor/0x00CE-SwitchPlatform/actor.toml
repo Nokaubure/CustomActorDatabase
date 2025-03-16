@@ -1,6 +1,6 @@
 Name = "Switch Platform"
 Category = "BG"
-Version = 1
+Version = 2
 Notes = "Platform that follows a pathway or a position defined by rotation depending on switch flag.\nYou can change its color, speed and initial state with properties."
 
 [[Render]]
