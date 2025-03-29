@@ -1,0 +1,9 @@
+Name = "Eyegore Rock"
+Category = "Prop"
+Version = 1
+Notes = "Effect of Eyegore enemy"
+[[Property]]
+    Mask          = 0xFFFF
+    Name          = "Type"
+    Target        = "Var"
+    Dropdown = [ [ 0, "Large"],[ 1, "Small"]]

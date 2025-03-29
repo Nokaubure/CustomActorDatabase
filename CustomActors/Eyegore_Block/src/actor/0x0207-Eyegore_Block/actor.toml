@@ -1,0 +1,14 @@
+Name = "Eyegore Block"
+Category = "Prop"
+Version = 1
+Notes = "Block that can be destroyed by Eyegore enemy"
+[[Render]]
+    Regex = "...."
+    Segment = 6
+    Scale = 0.5
+    DisplayList = "0x00001698"
+[[Property]]
+    Mask          = 0xF000
+    Name          = "Type"
+    Target        = "Var"
+    Dropdown = [ [ 0, "Normal"],[ 1, "Indestructible"]]

@@ -73,4 +73,16 @@ Midboss ported from Majora's Mask, dangerous enemy that wields two flaming saber
 Training Dummy Actor made by Jinnosuke9. 
 Has a variety of typical enemy behaviors and some new ones.
   </Actor>
+  <Actor2 Key="21" Version="1" Name="Eyegore" FolderName="Eyegore" Author="X Dude Awesome" HasCustomObject="1" Dependencies="Eyegore_Rock,Eyegore_Block" Category="Boss">
+Enemy ported from Majora's Mask, the cyclops-like enemy guarding a bridge in the stone tower temple, shot a light arrow to its eye!
+  </Actor2>
+  <Actor2 Key="22" Version="1" Name="Eyegore Rock" FolderName="Eyegore_Rock" Author="X Dude Awesome" HasCustomObject="1" ObjectName="Eyegore" Category="Dependency">
+Dependency of Eyegore
+  </Actor2>
+  <Actor2 Key="23" Version="1" Name="Eyegore Block" FolderName="Eyegore_Block" Author="X Dude Awesome" HasCustomObject="1" ObjectName="Eyegore" Category="Dependency">
+Dependency of Eyegore, unused block that can be destroyed by Eyegore's attacks
+  </Actor2>
+  <Actor Key="24" Version="1" Name="Shock Fungus" FolderName="ShockFungus" Author="Nokaubure, Syeo" HasCustomObject="1" Category="Boss">
+Custom midboss, gives Link a hard time to approach it at close range due its electrical field. Becomes stronger as the fight progresses. Weak to fire and ice arrows. You can choose whenever to play midboss music or not via params.
+  </Actor>
 </Table>
