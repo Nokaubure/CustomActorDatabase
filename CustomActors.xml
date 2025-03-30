@@ -74,7 +74,7 @@ Training Dummy Actor made by Jinnosuke9.
 Has a variety of typical enemy behaviors and some new ones.
   </Actor>
   <Actor2 Key="21" Version="1" Name="Eyegore" FolderName="Eyegore" Author="X Dude Awesome" HasCustomObject="1" Dependencies="Eyegore_Rock,Eyegore_Block" Category="Boss">
-Enemy ported from Majora's Mask, the cyclops-like enemy guarding a bridge in the stone tower temple, shot a light arrow to its eye!
+Enemy ported from Majora's Mask, the cyclops-like enemy guarding a bridge in the stone tower temple, shot a light arrow to its eye! Uses pathway ID
   </Actor2>
   <Actor2 Key="22" Version="1" Name="Eyegore Rock" FolderName="Eyegore_Rock" Author="X Dude Awesome" HasCustomObject="1" ObjectName="Eyegore" Category="Dependency">
 Dependency of Eyegore
