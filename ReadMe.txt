@@ -12,9 +12,9 @@ The following will be gone in a future update but for now they're needed:
 
 - The actor cant use more than one custom object. It can use custom object + vanilla object however.
 
-- The actor cant depend on other custom actors.
+- (allowed in SO 1.60+!) The actor cant depend on other custom actors.
 
-- 2 custom actors cant share the same custom object.
+- (allowed in SO 1.60+!) 2 custom actors cant share the same custom object.
 
 
-Join HylianModding and DM me if you
+Join HylianModding and DM me if you have further questions or want to upload an actor
