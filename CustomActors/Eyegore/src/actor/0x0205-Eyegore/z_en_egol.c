@@ -471,12 +471,14 @@ void EnEgol_Init(Actor* thisx, PlayState* play) {
 
     this->wakeupRange = this->actor.world.rot.x * 20.0f;
     this->actor.world.rot.x = 0;
+    this->actor.shape.rot.x = 0;
     if (this->wakeupRange < 0.0f) {
         this->wakeupRange = 200.0f;
     }
 
     this->minLaserRange = this->actor.world.rot.z * 20.0f;
     this->actor.world.rot.z = 0;
+    this->actor.shape.rot.z = 0;
     if (this->minLaserRange < 0.0f) {
         this->minLaserRange = 200.0f;
     }

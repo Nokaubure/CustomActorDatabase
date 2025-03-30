@@ -1,10 +1,29 @@
 Name = "Eyegore"
 Category = "Enemy"
 Version = 1
-Notes = "Enemy ported from Majora's Mask, the cyclops-like enemy guarding a bridge in the stone tower temple, shot a light arrow to its eye!"
+Notes = "Enemy ported from Majora's Mask, the cyclops-like enemy guarding a bridge in the stone tower temple, shot a light arrow to its eye! Uses pathways."
 [[Render]]
     Regex = "...."
     Segment = 6
     Scale = 0.015
     Animation = 1
     Hierarchy = 1
+    IgnoreRotation = [1,0,1]
+[[Property]]
+	Mask          = 0x1FC0
+	Name          = "Switch Flag (7F = Null)"
+	Target        = "Var"
+[[Property]]
+	Mask          = 0x003F
+	Name          = "Pathway ID"
+	Target        = "Var"
+[[Property]]
+	Mask          = 0xFFFF
+	Name          = "Wakeup Range (x20)"
+	Target        = "XRot"
+	Decimal       = true
+[[Property]]
+	Mask          = 0xFFFF
+	Name          = "Minimum Laser Range (x20)"
+	Target        = "ZRot"
+	Decimal       = true
