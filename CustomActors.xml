@@ -85,4 +85,7 @@ Dependency of Eyegore, unused block that can be destroyed by Eyegore's attacks
   <Actor Key="24" Version="1" Name="Shock Fungus" FolderName="ShockFungus" Author="Nokaubure, Syeo" HasCustomObject="1" Category="Boss">
 Custom midboss, gives Link a hard time to approach it at close range due its electrical field. Becomes stronger as the fight progresses. Weak to fire and ice arrows. You can choose whenever to play midboss music or not via params.
   </Actor>
+  <Actor Key="25" Version="1" Name="MM Boss Warp" FolderName="MMBossWarp" Author="X Dude Awesome, Nokaubure" HasCustomObject="1" Category="Utility">
+Actor ported from Majora's Mask, boss warp portal used after the fights or as a checkpoint in the middle of the dungeon. Uses z64rom new exit system.
+  </Actor>
 </Table>

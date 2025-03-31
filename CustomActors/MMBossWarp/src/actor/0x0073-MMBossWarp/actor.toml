@@ -1,0 +1,30 @@
+Name = "MM Boss Warp"
+Category = "ItemAction"
+Version = 1
+Notes = "Actor ported from Majora's Mask, boss warp portal used after the fights or as a checkpoint in the middle of the dungeon. Uses z64rom new exit system."
+
+
+[[Render]]
+    Regex = "...[2-5]"
+    Segment = 6
+    Scale = 0.1
+    DisplayList = "0x060076C0"
+    IgnoreRotation = [1,0,1]
+[[Property]]
+	Mask          = 0x00FF
+	Name          = "Type"
+	Target        = "Var"
+	Dropdown = [ [ 0, "Blue Warp"],[ 1, "Blue Boss Warp"],[ 2, "Boss Warp Pad & Light"],[ 3, "Boss Warp Pad & Light (No Text)"],[ 4, "Boss Warp Pad & Light"],[ 5, "Boss Warp Pad & Light"],[ 6, "Boss Warp Light (don't use)"]]
+[[Property]]
+	Mask          = 0xFF00
+	Name          = "Exit ID"
+	Target        = "Var"
+[[Property]]
+	Mask          = 0x007F
+	Name          = "Switch Flag (7F = Null)"
+	Target        = "XRot"
+[[Property]]
+	Mask          = 0x00FF
+	Name          = "Light Color"
+	Target        = "ZRot"
+   	Dropdown = [ [ 0, "Green"],[ 1, "Blue"],[ 2, "Dark Blue"],[ 3, "Leaf Green"],[ 4, "Red"],[ 5, "Purple"],[ 6, "Orange"]]
