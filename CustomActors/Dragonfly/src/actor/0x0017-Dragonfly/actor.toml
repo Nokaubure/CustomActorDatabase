@@ -1,0 +1,16 @@
+Name = "Dragonfly"
+Category = "Enemy"
+Version = 1
+Notes = "Enemy ported from Majora's Mask, dragonfly found in the swamp that shots projectiles at you"
+[[Render]]
+    Regex = "...."
+    Segment = 6
+    Scale = 0.01
+    Animation = 1
+    Hierarchy = 1
+    YOffset = 0
+[[Property]]
+	Mask          = 0xFFFF
+	Name          = "Type"
+	Target        = "Var"
+	Dropdown = [ [ 0, "Normal"],[ 1, "Grows when spawned"],[ 2, "Woodfall temple final room"],[ 3, "Woodfall"],[ 4, "Stationary"]]
