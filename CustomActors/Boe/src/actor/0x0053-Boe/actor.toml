@@ -1,0 +1,34 @@
+Name = "Boe"
+Category = "Enemy"
+Version = 1
+Notes = "Enemy ported from Majora's Mask, small dust creature with no special powers"
+[[Property]]
+	Mask          = 0x0001
+	Name          = "Color"
+	Target        = "Var"
+	Dropdown = [ [ 0, "Black"],[ 1, "White"]]
+[[Property]]
+	Mask          = 0x0002
+	Name          = "Time to appear"
+	Target        = "Var"
+	Dropdown = [ [ 0, "Slow"],[ 1, "Fast"]]
+[[Property]]
+	Mask          = 0x0004
+	Name          = "Infinite Respawn"
+	Target        = "Var"
+	Dropdown = [ [ 0, "Off"],[ 1, "On"]]
+[[Property]]
+	Mask          = 0xFF00
+	Name          = "Distance To Appear (x4) (0 = Inf)"
+	Target        = "Var"
+	Decimal       = true
+[[Property]]
+	Mask          = 0x00FF
+	Name          = "Unknown"
+	Target        = "XRot"
+	Decimal       = true
+[[Property]]
+	Mask          = 0x00FF
+	Name          = "Drop Table (0 = no drop)"
+	Target        = "ZRot"
+	Decimal       = true

@@ -89,6 +89,9 @@ Custom midboss, gives Link a hard time to approach it at close range due its ele
 Actor ported from Majora's Mask, boss warp portal used after the fights or as a checkpoint in the middle of the dungeon. Uses z64rom new exit system.
   </Actor>
   <Actor Key="26" Version="1" Name="Dragonfly" FolderName="Dragonfly" Author="X Dude Awesome" HasCustomObject="1" Category="Enemy">
-Enemy ported from Majora's Mask, dragonfly found in the swamp that shots projectiles at you
+Enemy ported from Majora's Mask, dragonfly found in the swamp that attacks you with an electrical tail
+  </Actor>
+  <Actor Key="27" Version="1" Name="Boe" FolderName="Boe" Author="X Dude Awesome" HasCustomObject="1" Category="Enemy">
+Enemy ported from Majora's Mask, small dust creature with no special powers
   </Actor>
 </Table>

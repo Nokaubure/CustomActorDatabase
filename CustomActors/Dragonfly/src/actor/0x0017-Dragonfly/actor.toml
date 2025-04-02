@@ -1,7 +1,7 @@
 Name = "Dragonfly"
 Category = "Enemy"
 Version = 1
-Notes = "Enemy ported from Majora's Mask, dragonfly found in the swamp that shots projectiles at you"
+Notes = "Enemy ported from Majora's Mask, dragonfly found in the swamp that attacks you with an electrical tail"
 [[Render]]
     Regex = "...."
     Segment = 6
