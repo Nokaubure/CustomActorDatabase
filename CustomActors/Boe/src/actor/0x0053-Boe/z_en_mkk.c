@@ -182,7 +182,7 @@ void EnMkk_Init(Actor* thisx, PlayState* play) {
     this->unk_149 = 0;
     this->unk_152 = (this->actor.shape.rot.x >= 0) ? this->actor.shape.rot.x : this->actor.shape.rot.x * -0x50;
 
-    this->unk_14C = CLAMP(this->actor.shape.rot.z, 0, 16);
+    this->unk_14C = CLAMP(this->actor.shape.rot.z, 0, 14);
 
     this->actor.shape.rot.z = 0;
     this->actor.world.rot.z = 0;
