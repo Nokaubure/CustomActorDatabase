@@ -17,6 +17,7 @@
 #define THIS ((EnJso2*)thisx)
 
 #define ACT_ID 0x035B
+#define ACT2_ID 0x035C
 #define OBJ_ID 0x022E
 
 void EnJso2_Init(Actor* thisx, PlayState* play);
@@ -383,7 +384,7 @@ void func_80A778F8(EnJso2* this, PlayState* play) {
                     unk1078Copy.x += Rand_CenteredFloat(80.0f);
                     unk1078Copy.y = this->actor.world.pos.y + (i * 120.0f);
                     unk1078Copy.z += Rand_CenteredFloat(80.0f);
-                    Actor_Spawn(&play->actorCtx, play, 0x035C, unk1078Copy.x, unk1078Copy.y, unk1078Copy.z, 0,
+                    Actor_Spawn(&play->actorCtx, play, ACT2_ID, unk1078Copy.x, unk1078Copy.y, unk1078Copy.z, 0,
                                 this->actor.world.rot.y, 0, 2);
                 }
                 this->unk1044 = 25;
@@ -1106,7 +1107,7 @@ void func_80A79BA0(EnJso2* this, PlayState* play) {
     Vec3f sp4C;
 
     if ((this->unk1040 == 0x15) && (curframe >= this->unk374) && !this->unk2D0) {
-        this->unk2D0 = Actor_SpawnAsChild(&play->actorCtx, &this->actor, play, 0x035C, this->unk2C4.x,
+        this->unk2D0 = Actor_SpawnAsChild(&play->actorCtx, &this->actor, play, ACT2_ID, this->unk2C4.x,
                                           this->unk2C4.y, this->unk2C4.z, 0, 0, 0, 3);
     }
 
@@ -1239,7 +1240,7 @@ void func_80A7A124(EnJso2* this, PlayState* play) {
 
     if ((this->unk1040 == 0x15) && (this->unk374 <= curFrame)) {
         if (this->unk2D0 == NULL) {
-            this->unk2D0 = Actor_SpawnAsChild(&play->actorCtx, &this->actor, play, 0x035C, this->unk2C4.x,
+            this->unk2D0 = Actor_SpawnAsChild(&play->actorCtx, &this->actor, play, ACT2_ID, this->unk2C4.x,
                                               this->unk2C4.y, this->unk2C4.z, 0, 0, 0, 4);
         } else if (this->unk104A >= 10) {
             if (this->unk2D0 != NULL) {

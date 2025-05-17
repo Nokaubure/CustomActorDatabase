@@ -66,9 +66,9 @@ Enemy ported from Majora's Mask, turtle-like creature that spins against Link
   <Actor Key="15" Version="1" Name="Real Bombchu" FolderName="RealBombchu" Author="X Dude Awesome" HasCustomObject="1" Category="Enemy">
 Enemy ported from Majora's Mask, rat-shaped creature that explodes on contact and can climb walls
   </Actor>
-  <Actor Key="16" Version="1" Name="Garo Master" FolderName="GaroMaster" Author="X Dude Awesome" HasCustomObject="1" Category="Boss">
+  <Actor2 Key="16" Version="2" Name="Garo Master" FolderName="GaroMaster" Author="X Dude Awesome" HasCustomObject="1" Dependencies="GaroEffect" Category="Boss">
 Midboss ported from Majora's Mask, dangerous enemy that wields two flaming sabers
-  </Actor>
+  </Actor2>
   <Actor Key="17" Version="1" Name="Training Dummy" FolderName="TrainingDummy" Author="Jinnosuke9" HasCustomObject="1" Category="Utility">
 Training Dummy Actor made by Jinnosuke9. 
 Has a variety of typical enemy behaviors and some new ones.
@@ -94,4 +94,7 @@ Enemy ported from Majora's Mask, dragonfly found in the swamp that attacks you w
   <Actor Key="27" Version="1" Name="Boe" FolderName="Boe" Author="X Dude Awesome" HasCustomObject="1" Category="Enemy">
 Enemy ported from Majora's Mask, small dust creature with no special powers
   </Actor>
+  <Actor2 Key="28" Version="1" Name="Garo Effect" FolderName="GaroEffect" Author="X Dude Awesome" Category="Dependency">
+Dependency of Garo Master, used on various of his effects
+  </Actor2>
 </Table>
