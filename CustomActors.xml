@@ -97,4 +97,7 @@ Enemy ported from Majora's Mask, small dust creature with no special powers
   <Actor2 Key="28" Version="1" Name="Garo Effect" FolderName="GaroEffect" Author="X Dude Awesome" Category="Dependency">
 Dependency of Garo Master, used on various of his effects
   </Actor2>
+  <Actor Key="29" Version="1" Name="Skull Fish" FolderName="SkullFish" Author="X Dude Awesome" HasCustomObject="1" Category="Enemy">
+Enemy ported from Majora's Mask, skeletal fish found in the great bay that attacks you in the water
+  </Actor>
 </Table>

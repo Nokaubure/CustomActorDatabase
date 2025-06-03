@@ -1,0 +1,21 @@
+Name = "Skullfish"
+Category = "Enemy"
+Version = 1
+Notes = "Enemy ported from Majora's Mask, skeletal fish found in the great bay that attacks you in the water"
+[[Render]]
+    Regex = "...."
+    Segment = 6
+    Scale = 0.02
+    Animation = 1
+    Hierarchy = 2
+    YOffset = 0
+[[Property]]
+	Mask          = 0x000F
+	Name          = "Type"
+	Target        = "Var"
+	Dropdown = [ [ 0, "Does Nothing"],[ 1, "Attacks then disappears"],[ 2, "Attacks on range (configurable)"],[ 3, "Doesn't load"]]
+    [[Property]]
+    Mask          = 0x0FF0
+    Name          = "Detection range * 20 (Type 2)"
+    Target        = "Var"
+    Decimal       = true
