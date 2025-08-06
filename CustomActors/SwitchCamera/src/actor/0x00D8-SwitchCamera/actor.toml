@@ -1,7 +1,7 @@
 Name = "Switch Camera"
 Category = "BG"
-Version = 2
-Notes = "The camera will temporarily switch to this actor's position and rotation (Type 1) or to a scene camera ID (Type 2) when Switch Flag is turned on, adjust the time in properties"
+Version = 3
+Notes = "The camera will temporarily switch to this actor's position and rotation (Type 1) or to a scene camera ID (Type 2) when Switch Flag is turned on, adjust the time in properties. You can chain multiple cameras in a row."
 
 [[Property]]
 	Mask          = 0x003F

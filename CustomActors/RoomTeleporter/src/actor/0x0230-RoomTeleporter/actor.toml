@@ -1,0 +1,67 @@
+Name = "Room Teleporter"
+Category = "BG"
+Version = 1
+Notes = "Teleport tile that can warp Link and other actors across rooms or the same room. You can either make it teleport you in the X axis via X rotation, or to a pathway. You can configure color, if there's a delay during the warp or if its instant, the actors it targets, if it uses switch flag or not."
+
+[[Render]]
+    Regex = "...."
+    Segment = 6
+    Scale = 0.1
+    DisplayList = "gRoomTeleporter_DlRoomTeleporter"
+    ColorMask = 0x0F00
+    ColorTarget = "Var"
+    IgnoreRotation = [1,0,1]
+    PrimColorArray = [ [0xFF, 0x2B, 0x00, 0xFF], 
+    [0x6A, 0x00, 0xFF, 0xFF],
+    [0x00, 0xFF, 0x26, 0xFF],
+    [0xFF, 0xEC, 0x00, 0xFF],
+    [0xAA, 0x32, 0x9B, 0xFF],
+    [0xFF, 0x97, 0x3C, 0xFF],
+    [0xFF, 0xFF, 0xFF, 0xFF],
+    [0xFF, 0xFF, 0xFF, 0xFF],
+    [0xFF, 0xFF, 0xFF, 0xFF],
+    [0xFF, 0xFF, 0xFF, 0xFF],
+    [0xFF, 0xFF, 0xFF, 0xFF],
+    [0xFF, 0xFF, 0xFF, 0xFF],
+    [0xFF, 0xFF, 0xFF, 0xFF],
+    [0xFF, 0xFF, 0xFF, 0xFF],
+    [0xFF, 0xFF, 0xFF, 0xFF],
+    [0xFF, 0xFF, 0xFF, 0xFF] ]
+[[Property]]
+	Mask          = 0x1000
+	Name          = "Use Switch Flag"
+	Target        = "Var"
+	Dropdown = [ [ 0, "Always Enabled"],[ 1, "Uses Switch Flag"]]
+[[Property]]
+	Mask          = 0x2000
+	Name          = "Delay"
+	Target        = "Var"
+	Dropdown = [ [ 0, "Teleport Instantly"],[ 1, "Plays Short Cutscene"]]
+[[Property]]
+	Mask          = 0xC000
+	Name          = "Target Actors"
+	Target        = "Var"
+    Dropdown = [ [ 0, "Link and Navi"],[ 1, "All actors"],[ 2, "Link, Navi, Armos, Pushblock, Small crate"]]
+[[Property]]
+    Mask          = 0x0F00
+    Name          = "Color"
+    Target        = "Var"
+    Dropdown = [ [ 0, "Red"],[ 1, "Blue"],[ 2, "Green"],[ 3, "Yellow"],[ 4, "Purple"],[ 5, "Orange"],[ 6, "Undefined"]]
+[[Property]]
+    Mask          = 0x0F00
+    Name          = "Teleport Mode"
+    Target        = "ZRot"
+    Dropdown = [ [ 0, "Teleport X units relatively"],[ 1, "Teleport to first waypoint of a pathway"]]
+[[Property]]
+    Mask          = 0xFFFF
+    Name          = "Relative X units / Pathway ID"
+    Target        = "XRot"
+    Decimal       = true
+[[Property]]
+    Mask          = 0x00FF
+    Name          = "Target Room"
+    Target        = "ZRot"
+[[Property]]
+	Mask          = 0x003F
+	Name          = "Switch Flag"
+	Target        = "Var"

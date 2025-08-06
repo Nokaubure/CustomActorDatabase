@@ -15,19 +15,18 @@ Zrot = time in seconds / 10 (1 unit = 0.1 seconds), defaults at 1 second
 
 #define AVAL(base,type,offset)  (*(type*)((u8*)(base)+(offset)))
 
-#include "z64math.h"
-
-#include "ultra64.h"
 #include "global.h"
 
-#include "macros.h"
 
 #define OBJ_ID  0x01      
 #define ACT_ID 0x0005
 
 #define SMOOTH 1
 
-
+static u8 playing = 0;
+static Camera prevcam;
+static u8 dontdeletecam = 0;
+static u8 prevBg = 0;
 
 typedef struct {
     Actor actor;
@@ -43,6 +42,7 @@ typedef struct {
     Vec3f currenttarget;
     Vec3f posincr;
     Vec3f targetincr;
+    Camera prevcam;
 
 } entity_t;
 
@@ -89,7 +89,11 @@ void update(entity_t *en, PlayState *global) {
 
     if (en->enabled == 0 && Flags_GetSwitch(global, en->switchflag) != 0)
     {
+        if (playing != 0) {playing = 2; return;}
+
         en->enabled = 1;
+
+        playing = 1;
 
         if (en->discoverysound)
         {
@@ -109,13 +113,12 @@ void update(entity_t *en, PlayState *global) {
         }
         else
         {
-
+            if (!dontdeletecam) 
+            {
+                prevBg = global->mainCamera.bgCamIndex;
+                Camera_Copy(&prevcam,&global->mainCamera);
+            }
             Camera_ChangeBgCamIndex(&global->mainCamera, en->camID);
-
-
-            //Play_CameraSetAtEye(global, en->camera, &en->currenttarget, &en->currentpos);
-
-            //func_800C0808(global, en->camera, GET_PLAYER(global), CAM_SET_FREE0);
 
         }
         func_80064520(global, &global->csCtx);
@@ -125,7 +128,7 @@ void update(entity_t *en, PlayState *global) {
     else if (en->enabled == 1)
     {
         en->timer--;
-        if (en->useCamID != 0)
+        if (en->useCamID != 0 && en->timer != 0)
         {
             Camera_ChangeBgCamIndex(&global->mainCamera, en->camID);
         }
@@ -133,7 +136,17 @@ void update(entity_t *en, PlayState *global) {
         {
             func_80064534(global, &global->csCtx); 
             if (!en->useCamID) func_800C08AC(global, en->camera,0);
+            else 
+            {
+                if (playing == 2) dontdeletecam = 1;
+                else {
+                    dontdeletecam = 0;
+                    Camera_ChangeBgCamIndex(&global->mainCamera, prevBg);
+                    Camera_Copy(&global->mainCamera,&prevcam);
+                }
+            }
             Actor_Kill(&en->actor);
+            playing = 0;
             
         }
 
