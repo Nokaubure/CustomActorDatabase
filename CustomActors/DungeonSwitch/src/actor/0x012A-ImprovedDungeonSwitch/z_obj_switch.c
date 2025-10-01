@@ -9,15 +9,15 @@ New types (set Toggle to 1)
 
 No cutscenes when activating switches
 
-Togleable crystal switches will update when the switch flag is changed (so you can have more than 1 with the same flag)
+Togleable eye/crystal switches will update when the switch flag is changed (so you can have more than 1 with the same flag)
 
+New setting that makes so you have to activate multiple crystal/eye/floor switches to set a single flag
 
  **/
 
 #include "z_obj_switch.h"
 #include "assets/objects/gameplay_dangeon_keep/gameplay_dangeon_keep.h"
 #include "vt.h"
-#include <uLib.h>
 
 #define FLAGS ACTOR_FLAG_4
 #define ACT_ID 0x012A
@@ -304,8 +304,6 @@ void ObjSwitch_SetOff(ObjSwitch* this, PlayState* play) {
         {
             this->pressed = 0;
             SwitchCounter[(this->dyna.actor.params >> 8 & 0x3F)]++;
-            if (SwitchCounter[(this->dyna.actor.params >> 8 & 0x3F)] == MaxSwitchCounter[(this->dyna.actor.params >> 8 & 0x3F)])
-                Flags_UnsetSwitch(play, (this->dyna.actor.params >> 8 & 0x3F));
         }
         Flags_UnsetSwitch(play, (this->dyna.actor.params >> 8 & 0x3F));
         
@@ -655,7 +653,7 @@ void ObjSwitch_CrystalOffInit(ObjSwitch* this) {
     this->crystalColor.r = 0;
     this->crystalColor.g = 0;
     this->crystalColor.b = 0;
-    this->crystalSubtype1texture = (this->alternate == 0 ) ? gCrstalSwitchRedTex : (void*)gCrstalSwitchGreenTex; //edit 
+    this->crystalSubtype1texture = (this->alternate == 0 ) ? gCrstalSwitchRedTex : (void*)gCrystalSwitchGreenTex; //edit 
     this->actionFunc = ObjSwitch_CrystalOff;
 }
 

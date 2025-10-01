@@ -59,7 +59,7 @@ typedef struct ObjSwitch {
                  u8 alternate;
 } ObjSwitch; // size = 0x0258
 
-u32 gCrstalSwitchGreenTex[] = {
+u32 gCrystalSwitchGreenTex[] = {
 0x04C90407, 0x044703C7, 0x040705C9, 0x04C90407,
 0x0447060B, 0x070B05C9, 0x04870447, 0x04870509,
 0x05C9064B, 0x05C905C9, 0x04470487, 0x04470487,
