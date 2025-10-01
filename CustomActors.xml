@@ -20,11 +20,12 @@ A timer will start counting down once a switch flag is active, then after certai
   <Actor Key="19" Version="1" Name="Switch Water" FolderName="SwitchWater" Author="Nokaubure" HasCustomObject="1" Category="Puzzle">
 Water that raises or lowers depending on switch flag. The model will automatically fit the targeted waterbox ingame, so the model is not rendered in the tool. Speed configurable.
   </Actor>
-  <Actor Key="4" Version="1" Name="Improved Dungeon Switch" FolderName="DungeonSwitch" Author="Nokaubure" ActorID="012A" Category="Puzzle">
+  <Actor Key="4" Version="2" Name="Improved Dungeon Switch" FolderName="DungeonSwitch" Author="Nokaubure" ActorID="012A" Category="Puzzle">
 Edit of vanilla dungeon switch:
 - Adds a new green/yellow crystal switch variant (use main var 0005-0006)
 - No cutscenes when activating switches
-- Toggleable crystal switches can toggle other crystal switches that share the same flag
+- Toggleable crystal switches and eye switches can toggle other crystal and eye switches that share the same flag
+- (v2) New setting that makes so you have to activate multiple crystal/eye/floor switches to set a single flag
   </Actor>
   <Actor Key="20" Version="1" Name="Play Cutscene" FolderName="EnPlayCutscene" Author="" ActorID="01E0" ForceUpdate="1" Category="Utility">
 Updated version of the default actor that comes with z64rom, used to play cutscenes.

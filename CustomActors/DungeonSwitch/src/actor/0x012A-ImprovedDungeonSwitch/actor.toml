@@ -1,7 +1,7 @@
 Name = "Dungeon Switch"
 Category = "Prop"
-Version = 1
-Notes = "Edit of vanilla dungeon switch:\n- Adds a new green/yellow crystal switch variant (use main var 0005-0006)\n- No cutscenes when activating switches\n- Toggleable crystal switches can toggle other crystal switches that share the same flag"
+Version = 2
+Notes = "Edit of vanilla dungeon switch:\n- Adds a new green/yellow crystal switch variant (use main var 0005-0006)\n- No cutscenes when activating switches\n- Toggleable crystal switches and eye switches can toggle other crystal and eye switches that share the same flag\n- (v2) New setting that makes so you have to activate multiple crystal/eye/floor switches to set a single flag"
 
 [[Render]]
     Regex = "..20"
@@ -48,7 +48,7 @@ Notes = "Edit of vanilla dungeon switch:\n- Adds a new green/yellow crystal swit
     EnvColor = [0,255,0,125]
     DisplayList = "0x00006D10,0x00007488"
 [[Render]]
-    Regex = "...[3-4]"
+    Regex = "..[^5][3-4]"
     Segment = 5
     Scale = 0.1
     EnvColor = [255,255,255,125]
@@ -72,9 +72,13 @@ Notes = "Edit of vanilla dungeon switch:\n- Adds a new green/yellow crystal swit
 	Target        = "Var"
 [[Property]]
     Mask          = 0x0040
-    Name          = "Trigger All"
+    Name          = "Trigger All (yellow crystal)"
     Target        = "Var"
 [[Property]]
     Mask          = 0x0080
     Name          = "Frozen"
+    Target        = "Var"
+[[Property]]
+    Mask          = 0x8000
+    Name          = "Set flag once all switches are on"
     Target        = "Var"

@@ -17,14 +17,16 @@ Togleable crystal switches will update when the switch flag is changed (so you c
 #include "z_obj_switch.h"
 #include "assets/objects/gameplay_dangeon_keep/gameplay_dangeon_keep.h"
 #include "vt.h"
+#include <uLib.h>
 
 #define FLAGS ACTOR_FLAG_4
-#define ACT_ID  0x012A
+#define ACT_ID 0x012A
 
 // type:        (this->dyna.actor.params & 7)
 // subtype:     (this->dyna.actor.params >> 4 & 7)
 // switch flag: (this->dyna.actor.params >> 8 & 0x3F)
 // frozen:      this->dyna.actor.params >> 7 & 1
+// multiswitch check:  this->dyna.actor.params >> 8 & 0x80
 
 void ObjSwitch_Init(Actor* thisx, PlayState* play);
 void ObjSwitch_Destroy(Actor* thisx, PlayState* play);
@@ -71,6 +73,9 @@ const ActorInit Obj_Switch_InitVars = {
     (ActorFunc)ObjSwitch_Update,
     (ActorFunc)ObjSwitch_Draw,
 };
+
+static s8 SwitchCounter[0x40];  //multiswitch check
+static s8 MaxSwitchCounter[0x40];
 
 static f32 sHeights[] = { 10, 10, 0, 30, 30 };
 
@@ -249,17 +254,34 @@ Actor* ObjSwitch_SpawnIce(ObjSwitch* this, PlayState* play) {
                               (this->dyna.actor.params >> 8 & 0x3F) << 8);
 }
 
+u8 ObjSwitch_SwitchFlagSetOrPressed(ObjSwitch* this, PlayState* play) { //done for multiswitch check
+    if (Flags_GetSwitch(play, (this->dyna.actor.params >> 8 & 0x3F)) ||
+        (this->dyna.actor.params >> 8 & 0x80 && this->pressed == 1))
+        return 1;
+    return 0;
+
+}
+
 void ObjSwitch_SetOn(ObjSwitch* this, PlayState* play) {
     s32 pad;
     s32 subType;
 
-    if (Flags_GetSwitch(play, (this->dyna.actor.params >> 8 & 0x3F))) {
+    if (ObjSwitch_SwitchFlagSetOrPressed(this,play)) {
         this->cooldownOn = false;
     } else {
-        subType = (this->dyna.actor.params >> 4 & 7);
-        Flags_SetSwitch(play, (this->dyna.actor.params >> 8 & 0x3F));
+        if (this->dyna.actor.params >> 8 & 0x80) //multiswitch check
+        {
+            this->pressed = 1;
+            SwitchCounter[(this->dyna.actor.params >> 8 & 0x3F)]--;
+            Audio_PlaySfxTransposed(&gSfxDefaultPos, NA_SE_EV_FIVE_COUNT_LUPY, MaxSwitchCounter[(this->dyna.actor.params >> 8 & 0x3F)] - SwitchCounter[(this->dyna.actor.params >> 8 & 0x3F)]);
+            if (SwitchCounter[(this->dyna.actor.params >> 8 & 0x3F)] == 0)
+                Flags_SetSwitch(play, (this->dyna.actor.params >> 8 & 0x3F));
+        }
+        else
+            Flags_SetSwitch(play, (this->dyna.actor.params >> 8 & 0x3F));
 
-        //Edit no cutscene on toggles
+        /*Edit no cutscene 
+        subType = (this->dyna.actor.params >> 4 & 7);
         if ((this->dyna.actor.params >> 4 & 7) != OBJSWITCH_SUBTYPE_TOGGLE)
         {
             if (subType == OBJSWITCH_SUBTYPE_ONCE || subType == OBJSWITCH_SUBTYPE_SYNC) {
@@ -270,15 +292,24 @@ void ObjSwitch_SetOn(ObjSwitch* this, PlayState* play) {
         }
 
         //this->cooldownOn = true;
+        */
     }
 }
 
 void ObjSwitch_SetOff(ObjSwitch* this, PlayState* play) {
     this->cooldownOn = false;
 
-    if (Flags_GetSwitch(play, (this->dyna.actor.params >> 8 & 0x3F))) {
+    if (ObjSwitch_SwitchFlagSetOrPressed(this,play)) {
+        if (this->dyna.actor.params >> 8 & 0x80) //multiswitch check
+        {
+            this->pressed = 0;
+            SwitchCounter[(this->dyna.actor.params >> 8 & 0x3F)]++;
+            if (SwitchCounter[(this->dyna.actor.params >> 8 & 0x3F)] == MaxSwitchCounter[(this->dyna.actor.params >> 8 & 0x3F)])
+                Flags_UnsetSwitch(play, (this->dyna.actor.params >> 8 & 0x3F));
+        }
         Flags_UnsetSwitch(play, (this->dyna.actor.params >> 8 & 0x3F));
-/* Edit No cutscene
+        
+        /* Edit No cutscene
         if ((this->dyna.actor.params >> 4 & 7) == OBJSWITCH_SUBTYPE_TOGGLE) {
             OnePointCutscene_AttentionSetSfx(play, &this->dyna.actor, NA_SE_SY_TRE_BOX_APPEAR);
             this->cooldownOn = true;
@@ -301,7 +332,7 @@ void ObjSwitch_Init(Actor* thisx, PlayState* play) {
     switchFlagSet = Flags_GetSwitch(play, (this->dyna.actor.params >> 8 & 0x3F));
     type = (this->dyna.actor.params & 7);
 
-    //edit
+    //edit green crystal
     if (type == OBJSWITCH_TYPE_CRYSTAL2 || type == OBJSWITCH_TYPE_CRYSTAL2_TARGETABLE)
     {
         type -= 2;
@@ -367,6 +398,12 @@ void ObjSwitch_Init(Actor* thisx, PlayState* play) {
         }
     }
 
+    if (!switchFlagSet && this->dyna.actor.params >> 8 & 0x80) //multiswitch check
+    {
+        SwitchCounter[(this->dyna.actor.params >> 8 & 0x3F)]++;
+        MaxSwitchCounter[(this->dyna.actor.params >> 8 & 0x3F)]++;
+    }
+
     osSyncPrintf("(Dungeon switch)(arg_data 0x%04x)\n", this->dyna.actor.params);
 }
 
@@ -389,6 +426,12 @@ void ObjSwitch_Destroy(Actor* thisx, PlayState* play) {
         case OBJSWITCH_TYPE_CRYSTAL_TARGETABLE:
             Collider_DestroyJntSph(play, &this->jntSph.col);
             break;
+    }
+
+    if (this->dyna.actor.params >> 8 & 0x80) //multiswitch check
+    {
+        SwitchCounter[(this->dyna.actor.params >> 8 & 0x3F)] = 0;
+        MaxSwitchCounter[(this->dyna.actor.params >> 8 & 0x3F)] = 0;
     }
 }
 
@@ -463,7 +506,7 @@ void ObjSwitch_FloorDownInit(ObjSwitch* this) {
 void ObjSwitch_FloorDown(ObjSwitch* this, PlayState* play) {
     switch (this->dyna.actor.params >> 4 & 7) {
         case OBJSWITCH_SUBTYPE_ONCE:
-            if (!Flags_GetSwitch(play, (this->dyna.actor.params >> 8 & 0x3F))) {
+            if (!ObjSwitch_SwitchFlagSetOrPressed(this,play)) {
                 ObjSwitch_FloorReleaseInit(this);
             }
             break;
@@ -547,7 +590,7 @@ void ObjSwitch_EyeOpenInit(ObjSwitch* this) {
 }
 
 void ObjSwitch_EyeOpen(ObjSwitch* this, PlayState* play) {
-    if (ObjSwitch_EyeIsHit(this)) {
+    if  (ObjSwitch_EyeIsHit(this) || Flags_GetSwitch(play, (this->dyna.actor.params >> 8 & 0x3F))) {
         ObjSwitch_EyeClosingInit(this);
         ObjSwitch_SetOn(this, play);
         this->dyna.actor.params &= ~0x80;
@@ -577,13 +620,13 @@ void ObjSwitch_EyeClosedInit(ObjSwitch* this) {
 void ObjSwitch_EyeClosed(ObjSwitch* this, PlayState* play) {
     switch (this->dyna.actor.params >> 4 & 7) {
         case OBJSWITCH_SUBTYPE_ONCE:
-            if (!Flags_GetSwitch(play, (this->dyna.actor.params >> 8 & 0x3F))) {
+            if (!ObjSwitch_SwitchFlagSetOrPressed(this, play)) {
                 ObjSwitch_EyeOpeningInit(this);
                 this->dyna.actor.params &= ~0x80;
             }
             break;
         case OBJSWITCH_SUBTYPE_TOGGLE:
-            if (ObjSwitch_EyeIsHit(this) || (this->dyna.actor.params >> 7 & 1)) {
+            if (ObjSwitch_EyeIsHit(this) || (this->dyna.actor.params >> 7 & 1) ||  !ObjSwitch_SwitchFlagSetOrPressed(this, play)) {
                 ObjSwitch_EyeOpeningInit(this);
                 ObjSwitch_SetOff(this, play);
                 this->dyna.actor.params &= ~0x80;
@@ -671,14 +714,13 @@ void ObjSwitch_CrystalOn(ObjSwitch* this, PlayState* play) {
     switch (this->dyna.actor.params >> 4 & 7) {
         case OBJSWITCH_SUBTYPE_ONCE:
         case OBJSWITCH_SUBTYPE_SYNC:
-            if (!Flags_GetSwitch(play, (this->dyna.actor.params >> 8 & 0x3F))) {
+            if (!ObjSwitch_SwitchFlagSetOrPressed(this, play)) {
                 ObjSwitch_CrystalTurnOffInit(this);
             }
             break;
         case OBJSWITCH_SUBTYPE_TOGGLE:
-            if (((this->jntSph.col.base.acFlags & AC_HIT) && !(this->unk_17F & AC_HIT) && this->disableAcTimer <= 0) ||  !Flags_GetSwitch(play,this->dyna.actor.params >> 8 & 0x3F)) {
+            if (((this->jntSph.col.base.acFlags & AC_HIT) && !(this->unk_17F & AC_HIT) && this->disableAcTimer <= 0) ||  !ObjSwitch_SwitchFlagSetOrPressed(this, play)) {
                 this->disableAcTimer = 10;
-                play = play;
                 ObjSwitch_CrystalTurnOffInit(this);
                 ObjSwitch_SetOff(this, play);
             }
