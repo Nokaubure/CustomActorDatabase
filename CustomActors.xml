@@ -105,4 +105,7 @@ Enemy ported from Majora's Mask, skeletal fish found in the great bay that attac
   <Actor Key="30" Version="1" Name="Room Teleporter" FolderName="RoomTeleporter" Author="Nokaubure" HasCustomObject="1" Category="Puzzle">
 Teleport tile that can warp Link and other actors across rooms or the same room. You can either make it teleport you in the X axis via X rotation, or to a pathway. You can configure color, if there's a delay during the warp or if its instant, the actors it targets, if it uses switch flag or not.
   </Actor>
+  <Actor Key="31" Version="1" Name="Eeno" FolderName="Eeno" Author="X Dude Awesome" HasCustomObject="1" Category="Enemy">
+Enemy ported from Majora's Mask, snow enemy that moves around, buried, and unburies to throw snowballs at you after you come close. One variant is a big one that splits into several smaller ones.
+  </Actor>
 </Table>

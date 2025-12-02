@@ -1,0 +1,23 @@
+Name = "Eeno"
+Category = "Enemy"
+Version = 1
+Notes = "Ported from Majora's Mask"
+[[Render]]
+    Regex = "...[012]"
+    Segment = 6
+    ScaleMask = 0x00FF
+    ScaleTarget = "Var"
+    ScaleArray = [ 0.01,0.02,0.01,0.006,0.01 ]
+    Animation = 1
+    Hierarchy = 1
+    YOffset = 0
+[[Property]]
+	Mask          = 0x00FF
+	Name          = "Type"
+	Target        = "Var"
+	Dropdown = [ [ 0, "Small"],[ 1, "Large"],[ 2, "Split"],[ 3, "Small Snowball"],[ 4, "Large Snowball"]]
+[[Property]]
+	Mask          = 0xFF00
+	Name          = "Attack Range (x4)"
+	Target        = "Var"
+	Decimal       = true
