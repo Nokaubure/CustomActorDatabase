@@ -1,6 +1,6 @@
 Name = "Snapper"
 Category = "Enemy"
-Version = 1
+Version = 2
 Notes = "Enemy ported from Majora's Mask, turtle-like creature that spins against Link"
 [[Render]]
     Regex = "...."

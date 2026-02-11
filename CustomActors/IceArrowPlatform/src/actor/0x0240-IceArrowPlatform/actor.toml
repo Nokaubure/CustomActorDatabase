@@ -1,0 +1,9 @@
+Name = "Ice Arrow Platform"
+Category = "Prop"
+Version = 1
+Notes = "MM actor ported by xdude, you can place it in the room and click send to z64rom for SO to autoadd the object in the room, then delete the actor"
+[[Render]]
+    Regex = "...."
+    Segment = 6
+    Scale = 0.1
+    DisplayList = "0x000001E0"

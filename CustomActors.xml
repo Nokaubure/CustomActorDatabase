@@ -62,7 +62,7 @@ Custom spooky midboss
   <Actor Key="13" Version="2" Name="Hiploop" FolderName="Hiploop" Author="X dude Awesome" HasCustomObject="1" Category="Enemy">
 Enemy ported from Majora's Mask, large insect that charges at Link
   </Actor>
-  <Actor Key="14" Version="1" Name="Snapper" FolderName="Snapper" Author="X Dude Awesome" HasCustomObject="1" Category="Enemy">
+  <Actor Key="14" Version="2" Name="Snapper" FolderName="Snapper" Author="X Dude Awesome" HasCustomObject="1" Category="Enemy">
 Enemy ported from Majora's Mask, turtle-like creature that spins against Link
   </Actor>
   <Actor Key="15" Version="1" Name="Real Bombchu" FolderName="RealBombchu" Author="X Dude Awesome" HasCustomObject="1" Category="Enemy">
@@ -108,4 +108,10 @@ Teleport tile that can warp Link and other actors across rooms or the same room.
   <Actor Key="31" Version="1" Name="Eeno" FolderName="Eeno" Author="X Dude Awesome" HasCustomObject="1" Category="Enemy">
 Enemy ported from Majora's Mask, snow enemy that moves around, buried, and unburies to throw snowballs at you after you come close. One variant is a big one that splits into several smaller ones.
   </Actor>
+  <Actor2 Key="32" Version="1" Name="IceArrowPlatform" FolderName="IceArrowPlatform" Author="X Dude Awesome" HasCustomObject="1" Category="Dependency">
+Dependency of Ice Arrow Platform 
+  </Actor2>
+  <Actor2 Key="33" Version="1" Name="Ice Arrow Platform" FolderName="MM_Arrow" Author="X Dude Awesome" ActorID="0016" ObjectName="IceArrowPlatform" Dependencies="IceArrowPlatform" Category="Utility">
+Ice arrow platform ported from Majora's Mask, installing this actor will also replace the ice arrow actor so it can create platforms when hitting the water. You must place the custom object in room objects or scene objects for the platform to appear, this lets you control in which scenes you want this behaviour or not.
+ </Actor2>
 </Table>

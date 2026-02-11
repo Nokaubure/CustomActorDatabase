@@ -115,8 +115,8 @@ static DamageTable sDamageTable = {
     /* Unknown 2      */ DMG_ENTRY(8, 0xF),
 };
 
-static u32 sEyeTextures[] = { 0x060055a0, 0x060057a0, 0x060059a0,
-                                   0x060057a0 };
+static u32 sEyeTextures[] = { gSnapperEyeOpenTex, gSnapperEyeHalfTex, gSnapperEyeClosedTex,
+                                   gSnapperEyeHalfTex };
 
 static InitChainEntry sInitChain[] = {
     ICHAIN_S8(naviEnemyId, 0x71, ICHAIN_CONTINUE),
@@ -137,9 +137,9 @@ void EnKame_Init(Actor* thisx, PlayState* play) {
     EnKame* this = THIS;
 
     Actor_ProcessInitChain(&this->actor, sInitChain);
-    SkelAnime_InitFlex(play, &this->skelAnime1, 0x06007c70, 0x06004210, this->jointTable1,
+    SkelAnime_InitFlex(play, &this->skelAnime1, gSnapperSkel, gSnapperIdleAnim, this->jointTable1,
                        this->morphTable1, 13);
-    SkelAnime_InitFlex(play, &this->skelAnime2, 0x06001a50, 0x06000b30, this->jointTable2,
+    SkelAnime_InitFlex(play, &this->skelAnime2, gSpikedSnapperSkel, gSpikedSnapperIdleAnim, this->jointTable2,
                        this->morphTable2, 4);
     ActorShape_Init(&this->actor.shape, 0.0f, ActorShadow_DrawCircle, 55.0f);
     Collider_InitCylinder(play, &this->collider);
@@ -197,7 +197,7 @@ void func_80AD7018(EnKame* this, PlayState* play) {
 }
 
 void func_80AD70A0(EnKame* this) {
-    Animation_MorphToPlayOnce(&this->skelAnime1, 0x06004210, -5.0f);
+    Animation_MorphToPlayOnce(&this->skelAnime1, gSnapperIdleAnim, -5.0f);
     this->actor.speedXZ = 0.0f;
     this->actionFunc = func_80AD70EC;
 }
@@ -219,9 +219,9 @@ void func_80AD70EC(EnKame* this, PlayState* play) {
 }
 
 void func_80AD71B4(EnKame* this) {
-    Animation_MorphToLoop(&this->skelAnime1, 0x0600823c, -5.0f);
+    Animation_MorphToLoop(&this->skelAnime1, gSnapperWalkAnim, -5.0f);
     this->actor.speedXZ = 0.5f;
-    this->unk_29E = Animation_GetLastFrame(0x0600823c) * ((s32)Rand_ZeroFloat(5.0f) + 3);
+    this->unk_29E = Animation_GetLastFrame(gSnapperWalkAnim) * ((s32)Rand_ZeroFloat(5.0f) + 3);
     this->unk_2A4 = this->actor.shape.rot.y;
     this->collider.base.acFlags |= (AC_HARD | AC_ON);
     this->collider.base.colType = COLTYPE_HARD;
@@ -255,7 +255,7 @@ void func_80AD7254(EnKame* this, PlayState* play) {
 }
 
 void func_80AD73A8(EnKame* this) {
-    Animation_MorphToPlayOnce(&this->skelAnime1, 0x06001c68, -3.0f);
+    Animation_MorphToPlayOnce(&this->skelAnime1, gSnapperRetreatIntoShellAnim, -3.0f);
     this->unk_29E = 0;
     this->unk_2AC = 1.0f;
     this->unk_2A8 = 1.0f;
@@ -417,7 +417,7 @@ void func_80AD7948(EnKame* this, PlayState* play) {
 
 void func_80AD7B18(EnKame* this) {
     this->actor.draw = EnKame_Draw;
-    Animation_MorphToPlayOnce(&this->skelAnime1, 0x060031dc, -3.0f);
+    Animation_MorphToPlayOnce(&this->skelAnime1, gSnapperEmergeFromShellAnim, -3.0f);
     this->actor.speedXZ = 0.0f;
     this->unk_2AC = 0.1f;
     this->unk_2A8 = 1.0f;
@@ -440,7 +440,7 @@ void func_80AD7B90(EnKame* this, PlayState* play) {
 }
 
 void EnKame_SetupFlipToNormal(EnKame* this) {
-        Animation_MorphToPlayOnce(&this->skelAnime1, 0x060035ec, -3.0f);
+        Animation_MorphToPlayOnce(&this->skelAnime1, gSnapperBouncedUprightAnim, -3.0f);
         this->unk_29E = 1;
         this->collider.info.bumper.dmgFlags &= ~0x8000;
 
@@ -457,7 +457,7 @@ void EnKame_SetupFlipToNormal(EnKame* this) {
 }
 
 void EnKame_SetupFlipOnBack(EnKame* this) {
-    Animation_MorphToPlayOnce(&this->skelAnime1, 0x060039c0, -3.0f);
+    Animation_MorphToPlayOnce(&this->skelAnime1, gSnapperFlipOverAnim, -3.0f);
     this->unk_29E = 0;
     this->collider.info.bumper.dmgFlags |= 0x8000;
 
@@ -476,11 +476,11 @@ void EnKame_SetupFlipOnBack(EnKame* this) {
 
 void EnKame_SetupFlip(EnKame* this) {
     if (this->actionFunc == func_80AD7E0C) {
-        Animation_MorphToPlayOnce(&this->skelAnime1, 0x060035ec, -3.0f);
+        Animation_MorphToPlayOnce(&this->skelAnime1, gSnapperBouncedUprightAnim, -3.0f);
         this->unk_29E = 1;
         this->collider.info.bumper.dmgFlags &= ~0x8000;
     } else {
-        Animation_MorphToPlayOnce(&this->skelAnime1, 0x060039c0, -3.0f);
+        Animation_MorphToPlayOnce(&this->skelAnime1, gSnapperFlipOverAnim, -3.0f);
         this->unk_29E = 0;
         this->collider.info.bumper.dmgFlags |= 0x8000;
     }
@@ -509,7 +509,7 @@ void func_80AD7D40(EnKame* this, PlayState* play) {
 }
 
 void func_80AD7DA4(EnKame* this) {
-    Animation_MorphToPlayOnce(&this->skelAnime1, 0x060027d8, -3.0f);
+    Animation_MorphToPlayOnce(&this->skelAnime1, gSnapperWiggleLegsAnim, -3.0f);
     this->collider.base.acFlags |= AC_ON;
     this->collider.base.acFlags &= ~AC_HARD;
     this->collider.base.colType = COLTYPE_HIT6;
@@ -522,9 +522,9 @@ void func_80AD7E0C(EnKame* this, PlayState* play) {
         this->unk_29E--;
         if (SkelAnime_Update(&this->skelAnime1)) {
             if (Rand_ZeroOne() > 0.5f) {
-                Animation_PlayOnce(&this->skelAnime1, 0x060027d8);
+                Animation_PlayOnce(&this->skelAnime1, gSnapperWiggleLegsAnim);
             } else {
-                Animation_PlayOnce(&this->skelAnime1, 0x06002f88);
+                Animation_PlayOnce(&this->skelAnime1, gSnapperFailToFlipUprightAnim);
                 //Actor_PlaySfx(&this->actor, NA_SE_EN_PAMET_ROAR);
                 SoundEffect_PlayOneshot(SOUND_ENEMY_SNAPPER_STRUGGLE, 1.0f, 1.0f, &this->actor.world.pos, 0.1f, 1000.0f, &this->actor);
             }
@@ -535,7 +535,7 @@ void func_80AD7E0C(EnKame* this, PlayState* play) {
 }
 
 void func_80AD7EC0(EnKame* this) {
-    Animation_MorphToPlayOnce(&this->skelAnime1, 0x06002510, -3.0f);
+    Animation_MorphToPlayOnce(&this->skelAnime1, gSnapperFlipUprightAnim, -3.0f);
     //Actor_PlaySfx(&this->actor, NA_SE_EN_PAMET_WAKEUP);
     SoundEffect_PlayOneshot(SOUND_ENEMY_SNAPPER_RECOVER, 1.0f, 1.0f, &this->actor.world.pos, 0.1f, 1000.0f, &this->actor);
     this->actionFunc = func_80AD7F10;
@@ -578,9 +578,9 @@ void func_80AD7FF8(EnKame* this, PlayState* play) {
 }
 
 void EnKame_SetupDamage(EnKame* this) {
-    s16 lastFrame = Animation_GetLastFrame(0x060008b4);
+    s16 lastFrame = Animation_GetLastFrame(gSnapperDamageAnim);
 
-    Animation_Change(&this->skelAnime1, 0x060008b4, 1.0f, 0.0f, lastFrame, ANIMMODE_ONCE, -3.0f);
+    Animation_Change(&this->skelAnime1, gSnapperDamageAnim, 1.0f, 0.0f, lastFrame, ANIMMODE_ONCE, -3.0f);
     Actor_SetColorFilter(&this->actor, 0x4000, 255, 0x0000, lastFrame);
     //Actor_PlaySfx(&this->actor, NA_SE_EN_PAMET_DAMAGE);
     SoundEffect_PlayOneshot(SOUND_ENEMY_SNAPPER_HIT, 1.0f, 1.0f, &this->actor.world.pos, 0.1f, 1000.0f, &this->actor);
@@ -596,7 +596,7 @@ void func_80AD810C(EnKame* this, PlayState* play) {
 }
 
 void EnKame_SetupDie(EnKame* this, PlayState* play) {
-    Animation_PlayLoop(&this->skelAnime1, 0x06000af4);
+    Animation_PlayLoop(&this->skelAnime1, gSnapperDeathAnim);
     Actor_SetColorFilter(&this->actor, 0x4000, 255, 0x0000, 20);
     this->collider.base.acFlags &= ~AC_ON;
     this->collider.base.atFlags &= ~AT_ON;
