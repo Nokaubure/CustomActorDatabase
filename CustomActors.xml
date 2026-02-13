@@ -114,4 +114,7 @@ Dependency of Ice Arrow Platform
   <Actor2 Key="33" Version="1" Name="Ice Arrow Platform" FolderName="MM_Arrow" Author="X Dude Awesome" ActorID="0016" ObjectName="IceArrowPlatform" Dependencies="IceArrowPlatform" Category="Utility">
 Ice arrow platform ported from Majora's Mask, installing this actor will also replace the ice arrow actor so it can create platforms when hitting the water. You must place the custom object in room objects or scene objects for the platform to appear, this lets you control in which scenes you want this behaviour or not.
  </Actor2>
+  <Actor Key="34" Version="1" Name="Light Arrow Block" FolderName="LightBlock" Author="X Dude Awesome, Nokaubure" HasCustomObject="1" Category="Puzzle">
+Actor ported from Majora's Mask, block that dissolves when shot by a light arrow. The special effect requires object 00A8 in the room.
+  </Actor>
 </Table>
