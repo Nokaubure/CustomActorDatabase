@@ -1,0 +1,10 @@
+Name = "Owl Statue"
+Category = "BG"
+Version = 1
+Notes = "Object ported from Majora's Mask. Can be used to save and quit the game."
+
+[[Render]]
+    Regex = "0..."
+    Segment = 6
+    Scale = 0.01
+    DisplayList = "0x00003770"
