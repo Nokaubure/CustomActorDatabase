@@ -117,4 +117,7 @@ Ice arrow platform ported from Majora's Mask, installing this actor will also re
   <Actor Key="34" Version="1" Name="Light Arrow Block" FolderName="LightBlock" Author="X Dude Awesome, Nokaubure" HasCustomObject="1" Category="Puzzle">
 Actor ported from Majora's Mask, block that dissolves when shot by a light arrow. The special effect requires object 00A8 in the room.
   </Actor>
+    <Actor Key="35" Version="1" Name="Owl Statue" FolderName="Owl_Statue" Author="Zeldaboy14, z64me" HasCustomObject="1" Category="Utility">
+Object ported from Majora's Mask. Can be used to save and quit the game.
+  </Actor>
 </Table>
