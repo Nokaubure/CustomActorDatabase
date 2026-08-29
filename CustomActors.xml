@@ -118,6 +118,12 @@ Ice arrow platform ported from Majora's Mask, installing this actor will also re
 Actor ported from Majora's Mask, block that dissolves when shot by a light arrow. The special effect requires object 00A8 in the room.
   </Actor>
     <Actor Key="35" Version="1" Name="Owl Statue" FolderName="Owl_Statue" Author="Zeldaboy14, z64me" HasCustomObject="1" Category="Utility">
-Object ported from Majora's Mask. Can be used to save and quit the game.
+Actor ported from Majora's Mask. Can be used to save and quit the game.
   </Actor>
+  <Actor2 Key="36" Version="1" Name="Chuchu" FolderName="Chuchu" Author="X Dude Awesome, Nokaubure" HasCustomObject="1" Dependencies="FrozenEnemyBlock" Category="Enemy">
+Enemy ported from Majora's Mask, slime enemy that moves around and contains an item inside, can be set to respawn and one variant can be turned into an ice block. Additionaly, new custom variants have been added.
+  </Actor2>
+  <Actor2 Key="37" Version="1" Name="Frozen Enemy Block" FolderName="FrozenEnemyBlock" Author="X Dude Awesome" HasCustomObject="1" Category="Dependency">
+Actor ported from Majora's Mask, ice block that appears when freezing certain enemies
+  </Actor2>
 </Table>

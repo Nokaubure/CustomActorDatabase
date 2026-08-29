@@ -1,0 +1,9 @@
+Name = "Frozen Enemy Block"
+Category = "Prop"
+Version = 1
+Notes = "Actor ported from Majora's Mask, ice block that appears when freezing certain enemies"
+[[Render]]
+    Regex = "...."
+    Segment = 6
+    Scale = 0.10
+    DisplayList = "0x060001A0"
