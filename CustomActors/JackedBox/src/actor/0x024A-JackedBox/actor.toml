@@ -1,0 +1,63 @@
+Name = "EnemyJackedBox"
+Category = "Enemy"
+Version = 1
+Notes = "Custom enemy based on a jack-in-the-box that moves by bouncing. Can pull out several weapons at random. When defeated, it turns into a small crate that can be picked up and thrown."
+
+[[Render]]
+    Regex = "...."
+    Scale = 0.01
+    YOffset = 0
+    DisplayList = "gEnJackedBox_DlCube"
+    ColorMask = 0x000F
+    ColorTarget = "Var"
+    PrimColorArray = [
+        [0x9F,0x61,0xFF,0xFF],
+        [0x59,0x7C,0xFF,0xFF],
+        [0xE9,0x3E,0x41,0xFF],
+        [0x53,0xC0,0x6F,0xFF],
+        [0xEF,0xEF,0xFF,0xFF],
+        [0x5C,0x5C,0x61,0xFF],
+        [0xFF,0xFF,0xFF,0xFF],
+    ]
+
+[[Property]]
+    Mask      = 0x000F
+    Name      = "Collectible"
+    Target    = "Var"
+    Dropdown = [
+        [ 0x00, "Rupees" ],
+        [ 0x01, "Ammos" ],
+        [ 0x02, "Health" ],
+        [ 0x03, "Magic" ],
+        [ 0x04, "Small Key" ],
+        [ 0x05, "Nothing" ],
+        [ 0x06, "Smart Drop" ],
+    ]
+    
+[[Property]]
+    Mask      = 0x3F00
+    Name      = "Collectible Flag (Nullable)"
+    Target    = "Var"
+[[Property]]
+    Mask      = 0xC000
+    Name      = "Type"
+    Target    = "Var"
+    Dropdown = [
+        [ 0x00, "DORMANT" ],
+        [ 0x01, "PATROL" ],
+        [ 0x02, "HARMLESS" ],
+    ]
+
+[[Property]]
+    Mask      = 0x000F
+    Name      = "Path Index"
+    Target    = "ZRot"
+[[Property]]
+    Mask      = 0x00F0
+    Name      = "Path Behavior"
+    Target    = "ZRot"
+    Dropdown = [
+        [ 0x00, "PATH_LOOP" ],
+        [ 0x01, "PATH_REVERSE" ],
+        [ 0x02, "PATH_RANDOMIZE" ],
+    ]
